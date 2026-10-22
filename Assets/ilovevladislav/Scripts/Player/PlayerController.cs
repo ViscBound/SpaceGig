@@ -30,7 +30,22 @@ namespace PlatformerController2D.Runtime.Scripts.Player
 		private StateMachine.StateMachine _stateMachine;
 		private PlayerStateMachineFactory _stateMachineFactory;
 
-	
+		public bool IsMoving =>
+    		inputReader.GetMoveDirection().x != 0f;
+
+		public bool IsCrouching =>
+			inputReader.GetCrouchState().IsHeld;
+
+		public bool IsRunning =>
+			_movementLogic.ShouldRun(inputReader.GetRunState());
+
+		public bool IsGrounded =>
+			collisionsChecker.IsGrounded;
+
+		public bool IsDashing =>
+			_playerTimerRegistry.dashTimer.IsRunning;
+
+
 		private void Awake()
 		{
 			_turnChecker = new TurnChecker(transformForTurn);
