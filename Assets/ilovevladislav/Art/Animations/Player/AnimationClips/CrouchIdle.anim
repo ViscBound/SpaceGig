@@ -7,7 +7,7 @@ AnimationClip:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CrouchIdle
-  serializedVersion: 7
+  serializedVersion: 8
   m_Legacy: 0
   m_Compressed: 0
   m_UseHighQualityCurve: 1
@@ -21,19 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 8490345850630462282, guid: b51a8573b82424047a0513160145e6a6, type: 3}
-    - time: 0.083333336
-      value: {fileID: -2907367982778163315, guid: b51a8573b82424047a0513160145e6a6, type: 3}
-    - time: 0.16666667
-      value: {fileID: 3296366073916849593, guid: b51a8573b82424047a0513160145e6a6, type: 3}
-    - time: 0.25
-      value: {fileID: -7258259275048380974, guid: b51a8573b82424047a0513160145e6a6, type: 3}
-    - time: 0.33333334
-      value: {fileID: -423718205833850649, guid: b51a8573b82424047a0513160145e6a6, type: 3}
-    - time: 0.41666666
-      value: {fileID: -5161594819010820556, guid: b51a8573b82424047a0513160145e6a6, type: 3}
-    - time: 0.5
-      value: {fileID: 98505748432901037, guid: b51a8573b82424047a0513160145e6a6, type: 3}
+      value: {fileID: -4129041442308449352, guid: 2e119652824e62244b68213125ffe8a6, type: 3}
     - time: 0.5833333
       value: {fileID: 9209594372852345979, guid: b51a8573b82424047a0513160145e6a6, type: 3}
     - time: 0.6666667
@@ -61,14 +49,9 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
       isSerializeReferenceCurve: 0
+      metaData: 0
     pptrCurveMapping:
-    - {fileID: 8490345850630462282, guid: b51a8573b82424047a0513160145e6a6, type: 3}
-    - {fileID: -2907367982778163315, guid: b51a8573b82424047a0513160145e6a6, type: 3}
-    - {fileID: 3296366073916849593, guid: b51a8573b82424047a0513160145e6a6, type: 3}
-    - {fileID: -7258259275048380974, guid: b51a8573b82424047a0513160145e6a6, type: 3}
-    - {fileID: -423718205833850649, guid: b51a8573b82424047a0513160145e6a6, type: 3}
-    - {fileID: -5161594819010820556, guid: b51a8573b82424047a0513160145e6a6, type: 3}
-    - {fileID: 98505748432901037, guid: b51a8573b82424047a0513160145e6a6, type: 3}
+    - {fileID: -4129041442308449352, guid: 2e119652824e62244b68213125ffe8a6, type: 3}
     - {fileID: 9209594372852345979, guid: b51a8573b82424047a0513160145e6a6, type: 3}
     - {fileID: -4788990647667620130, guid: b51a8573b82424047a0513160145e6a6, type: 3}
     - {fileID: -269011297, guid: b51a8573b82424047a0513160145e6a6, type: 3}
