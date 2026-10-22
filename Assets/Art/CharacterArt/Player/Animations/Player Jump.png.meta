@@ -95,11 +95,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: crouch_0
+      name: Player Jump_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,16 +125,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8bb96505fa2b2b6c0800000000000000
-      internalID: -4129041442308449352
+      spriteID: efa6a5c3048646e49a02d05160f059e6
+      internalID: -254372963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crouch_1
+      name: Player Jump_1
       rect:
         serializedVersion: 2
         x: 64
@@ -134,16 +147,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cf99eb86331f36f80800000000000000
-      internalID: -8114376900488553988
+      spriteID: dd33a652ee6ccf34197bda537327e5b6
+      internalID: 1651746053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crouch_2
+      name: Player Jump_2
       rect:
         serializedVersion: 2
         x: 128
@@ -156,10 +169,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 73f21b30a5948a120800000000000000
-      internalID: 2425269050296839991
+      spriteID: f71594a8add75184cb5b2ab2ecefd060
+      internalID: -1935656101
       vertices: []
       indices: 
       edges: []
@@ -180,9 +193,9 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      crouch_0: -4129041442308449352
-      crouch_1: -8114376900488553988
-      crouch_2: 2425269050296839991
+      Player Jump_0: -254372963
+      Player Jump_1: 1651746053
+      Player Jump_2: -1935656101
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

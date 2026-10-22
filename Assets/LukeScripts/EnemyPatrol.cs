@@ -1,46 +1,87 @@
+
 using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
     public GameObject pointA;
     public GameObject pointB;
+    public float speed = 2f;
+
     private Rigidbody2D rb;
-    // private Animator anim;
     private Transform currentPoint;
-    public float speed;
+    private Transform player;
+
+    private bool chasingPlayer = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        // anim = GetComponent<Animator>();
         currentPoint = pointB.transform;
     }
 
+
     void Update()
     {
-        Vector2 point = currentPoint.position - transform.position;
-        if(currentPoint == pointB.transform)
+        if (chasingPlayer && player != null)
         {
-            rb.linearVelocity = new Vector2(speed, 0);
+            // Chasing player horizontally
+            float direction = Mathf.Sign(
+                player.position.x - transform.position.x
+            );
+
+            rb.linearVelocity = new Vector2(direction * speed, 0f);
         }
         else
         {
-            rb.linearVelocity = new Vector2(-speed, 0);
-        }
+            // Patrolling point A and point B
+            float enemyX = transform.position.x;
+            float pointAX = pointA.transform.position.x;
+            float pointBX = pointB.transform.position.x;
 
-        if(Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
-        {
-            currentPoint = pointA.transform;
+            // Target reached or passed, turn around
+            if (currentPoint == pointB.transform && enemyX >= pointBX)
+            {
+                currentPoint = pointA.transform;
+            }
+            else if (currentPoint == pointA.transform && enemyX <= pointAX)
+            {
+                currentPoint = pointB.transform;
+            }
+
+            // Move towards the current patrol target
+            float direction = Mathf.Sign(
+                currentPoint.position.x - enemyX
+            );
+
+            rb.linearVelocity = new Vector2(direction * speed, 0f);
         }
-        if(Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointA.transform)
+    }
+
+    // Enter circle collider to have enemy follow you
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
         {
-            currentPoint = pointB.transform;
+            player = other.transform;
+            chasingPlayer = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            chasingPlayer = false;
+            player = null;
         }
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(pointA.transform.position, 0.5f);
-        Gizmos.DrawWireSphere(pointB.transform.position, 0.5f);
+        if (pointA != null)
+            Gizmos.DrawWireSphere(pointA.transform.position, 0.5f);
+
+        if (pointB != null)
+            Gizmos.DrawWireSphere(pointB.transform.position, 0.5f);
     }
 }
