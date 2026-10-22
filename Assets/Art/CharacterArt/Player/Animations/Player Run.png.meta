@@ -99,7 +99,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player Run_0
+      name: crouch_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,16 +112,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1fe4cf76df41ca94eb6bc209e29be35f
-      internalID: 1339379912
+      spriteID: 8bb96505fa2b2b6c0800000000000000
+      internalID: -4129041442308449352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Run_1
+      name: crouch_1
       rect:
         serializedVersion: 2
         x: 64
@@ -134,16 +134,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 404a57ff9e726e642b06720df314056d
-      internalID: -287451856
+      spriteID: cf99eb86331f36f80800000000000000
+      internalID: -8114376900488553988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Run_2
+      name: crouch_2
       rect:
         serializedVersion: 2
         x: 128
@@ -156,98 +156,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2cbf3aac867a5e14090bcb784e12606d
-      internalID: -1681289418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Run_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1cc18171263120d478fef83defa15045
-      internalID: -41285398
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Run_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9580843c076c9ce4a94307581cfd0c73
-      internalID: -922965330
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Run_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a93adbca504eb2c48b3a0aa655e65b62
-      internalID: 1233654370
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Run_6
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ab15354643f9264ca1af1babb596019
-      internalID: -435541285
+      spriteID: 73f21b30a5948a120800000000000000
+      internalID: 2425269050296839991
       vertices: []
       indices: 
       edges: []
@@ -268,13 +180,9 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Player Run_0: 1339379912
-      Player Run_1: -287451856
-      Player Run_2: -1681289418
-      Player Run_3: -41285398
-      Player Run_4: -922965330
-      Player Run_5: 1233654370
-      Player Run_6: -435541285
+      crouch_0: -4129041442308449352
+      crouch_1: -8114376900488553988
+      crouch_2: 2425269050296839991
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

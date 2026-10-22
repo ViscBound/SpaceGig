@@ -99,7 +99,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walk_0
+      name: crouch_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,16 +112,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a70c41a8496968b4fb7e5ff92a4d6bd8
-      internalID: -1940014145
+      spriteID: 8bb96505fa2b2b6c0800000000000000
+      internalID: -4129041442308449352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_1
+      name: crouch_1
       rect:
         serializedVersion: 2
         x: 64
@@ -134,16 +134,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 12d955aa67b91404a99790e60f1dead4
-      internalID: 740534961
+      spriteID: cf99eb86331f36f80800000000000000
+      internalID: -8114376900488553988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_2
+      name: crouch_2
       rect:
         serializedVersion: 2
         x: 128
@@ -156,76 +156,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 510d56c216371f14baad031f8cbad51d
-      internalID: -1026894185
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf954824e04d9a249b61e3984c169434
-      internalID: -109703357
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a80093ec7087d341a2470fb5a9e375b
-      internalID: -1015712413
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec4504130656f49499132f5442444f1b
-      internalID: 1708391039
+      spriteID: 73f21b30a5948a120800000000000000
+      internalID: 2425269050296839991
       vertices: []
       indices: 
       edges: []
@@ -246,12 +180,9 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      walk_0: -1940014145
-      walk_1: 740534961
-      walk_2: -1026894185
-      walk_3: -109703357
-      walk_4: -1015712413
-      walk_5: 1708391039
+      crouch_0: -4129041442308449352
+      crouch_1: -8114376900488553988
+      crouch_2: 2425269050296839991
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
