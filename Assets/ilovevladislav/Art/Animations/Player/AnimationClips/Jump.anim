@@ -7,7 +7,7 @@ AnimationClip:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Jump
-  serializedVersion: 7
+  serializedVersion: 8
   m_Legacy: 0
   m_Compressed: 0
   m_UseHighQualityCurve: 1
@@ -21,13 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1371029052870881117, guid: 57dd7b319a166d84abdd3fc8c0459957, type: 3}
+      value: {fileID: -254372963, guid: 2ade01945acb3a44883f7056b97b785c, type: 3}
     - time: 0.083333336
-      value: {fileID: -2315129620777849004, guid: 57dd7b319a166d84abdd3fc8c0459957, type: 3}
+      value: {fileID: 1651746053, guid: 2ade01945acb3a44883f7056b97b785c, type: 3}
     - time: 0.16666667
-      value: {fileID: 3525680688647848675, guid: 57dd7b319a166d84abdd3fc8c0459957, type: 3}
-    - time: 0.25
-      value: {fileID: -6961841436348922279, guid: 57dd7b319a166d84abdd3fc8c0459957, type: 3}
+      value: {fileID: -1935656101, guid: 2ade01945acb3a44883f7056b97b785c, type: 3}
     - time: 0.33333334
       value: {fileID: -8838444428936912337, guid: 57dd7b319a166d84abdd3fc8c0459957, type: 3}
     - time: 0.41666666
@@ -53,11 +51,11 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
       isSerializeReferenceCurve: 0
+      metaData: 0
     pptrCurveMapping:
-    - {fileID: -1371029052870881117, guid: 57dd7b319a166d84abdd3fc8c0459957, type: 3}
-    - {fileID: -2315129620777849004, guid: 57dd7b319a166d84abdd3fc8c0459957, type: 3}
-    - {fileID: 3525680688647848675, guid: 57dd7b319a166d84abdd3fc8c0459957, type: 3}
-    - {fileID: -6961841436348922279, guid: 57dd7b319a166d84abdd3fc8c0459957, type: 3}
+    - {fileID: -254372963, guid: 2ade01945acb3a44883f7056b97b785c, type: 3}
+    - {fileID: 1651746053, guid: 2ade01945acb3a44883f7056b97b785c, type: 3}
+    - {fileID: -1935656101, guid: 2ade01945acb3a44883f7056b97b785c, type: 3}
     - {fileID: -8838444428936912337, guid: 57dd7b319a166d84abdd3fc8c0459957, type: 3}
     - {fileID: 5615097069923012861, guid: 57dd7b319a166d84abdd3fc8c0459957, type: 3}
   m_AnimationClipSettings:
