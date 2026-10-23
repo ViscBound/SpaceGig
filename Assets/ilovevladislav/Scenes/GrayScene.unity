@@ -543,15 +543,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-<<<<<<< HEAD
   orthographic size: 9.310345
-=======
-<<<<<<< Updated upstream
-  orthographic size: 3.28125
-=======
-  orthographic size: 13.0172415
->>>>>>> Stashed changes
->>>>>>> DarraghBranch
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1169,7 +1161,7 @@ TilemapRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -11937,7 +11929,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.02, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 130701554}
@@ -13092,7 +13084,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -4129041442308449352, guid: 54adccc6047075b40aa55755280fda71, type: 3}
+  m_Sprite: {fileID: 2237285443321258136, guid: 9be83af99da644e4ebb0b92b14cabe40, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13113,7 +13105,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.082, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.8333333, y: 1.7, z: 1.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 690232521}
@@ -13212,11 +13204,6 @@ Transform:
   - {fileID: 836270400}
   m_Father: {fileID: 690232521}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> DarraghBranch
 --- !u!1 &1303283376
 GameObject:
   m_ObjectHideFlags: 0
@@ -13248,67 +13235,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
---- !u!1001 &1391639958
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1301960139076022574, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
-      propertyPath: m_Name
-      value: Player (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.0475559
-      objectReference: {fileID: 0}
-    - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.37592953
-      objectReference: {fileID: 0}
-    - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
->>>>>>> Stashed changes
->>>>>>> DarraghBranch
 --- !u!1 &1410213096
 GameObject:
   m_ObjectHideFlags: 0
@@ -14079,16 +14005,6 @@ SceneRoots:
   - {fileID: 1120032518}
   - {fileID: 709101701}
   - {fileID: 1520568360}
-<<<<<<< HEAD
   - {fileID: 2050118177}
   - {fileID: 975475864}
   - {fileID: 1303283377}
-=======
-<<<<<<< Updated upstream
-=======
-  - {fileID: 2050118177}
-  - {fileID: 975475864}
-  - {fileID: 1303283377}
-  - {fileID: 1391639958}
->>>>>>> Stashed changes
->>>>>>> DarraghBranch
