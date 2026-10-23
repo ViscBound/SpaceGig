@@ -544,7 +544,6 @@ Camera:
   field of view: 40
   orthographic: 1
 <<<<<<< HEAD
-<<<<<<< HEAD
   orthographic size: 9.310345
 =======
 <<<<<<< Updated upstream
@@ -553,9 +552,6 @@ Camera:
   orthographic size: 13.0172415
 >>>>>>> Stashed changes
 >>>>>>> DarraghBranch
-=======
-  orthographic size: 3.28125
->>>>>>> parent of 2753b56 (Player scaling changes)
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1173,7 +1169,7 @@ TilemapRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -11941,7 +11937,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.02, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 130701554}
@@ -13096,7 +13092,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 2237285443321258136, guid: 9be83af99da644e4ebb0b92b14cabe40, type: 3}
+  m_Sprite: {fileID: -4129041442308449352, guid: 54adccc6047075b40aa55755280fda71, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13117,7 +13113,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.082, z: 0}
-  m_LocalScale: {x: 2.8333333, y: 1.7, z: 1.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 690232521}
@@ -13217,7 +13213,6 @@ Transform:
   m_Father: {fileID: 690232521}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
 =======
@@ -13314,8 +13309,6 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
 >>>>>>> Stashed changes
 >>>>>>> DarraghBranch
-=======
->>>>>>> parent of 2753b56 (Player scaling changes)
 --- !u!1 &1410213096
 GameObject:
   m_ObjectHideFlags: 0
@@ -14087,7 +14080,6 @@ SceneRoots:
   - {fileID: 709101701}
   - {fileID: 1520568360}
 <<<<<<< HEAD
-<<<<<<< HEAD
   - {fileID: 2050118177}
   - {fileID: 975475864}
   - {fileID: 1303283377}
@@ -14100,5 +14092,3 @@ SceneRoots:
   - {fileID: 1391639958}
 >>>>>>> Stashed changes
 >>>>>>> DarraghBranch
-=======
->>>>>>> parent of 2753b56 (Player scaling changes)
