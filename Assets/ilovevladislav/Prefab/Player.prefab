@@ -474,8 +474,18 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.12598854, y: 0.11681652}
-  m_Size: {x: 0.8854798, y: 3.2893386}
+<<<<<<< HEAD
+  m_Offset: {x: 0.18211162, y: 0.13374501}
+  m_Size: {x: 0.26927954, y: 0.8596982}
+=======
+<<<<<<< Updated upstream
+  m_Offset: {x: -0.0070369737, y: 0.049797058}
+  m_Size: {x: 0.77509254, y: 1.3973901}
+=======
+  m_Offset: {x: -0.13263822, y: 0.057377577}
+  m_Size: {x: 0.89877915, y: 3.260285}
+>>>>>>> Stashed changes
+>>>>>>> DarraghBranch
   m_Direction: 0
 --- !u!1 &5480711703124284029
 GameObject:
@@ -618,7 +628,15 @@ Transform:
   m_GameObject: {fileID: 6082075566450748190}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.65, z: 0}
+<<<<<<< HEAD
+  m_LocalPosition: {x: 0, y: 0.468, z: 0}
+=======
+<<<<<<< Updated upstream
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0.672, z: 0}
+>>>>>>> Stashed changes
+>>>>>>> DarraghBranch
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -658,7 +676,15 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.42418995, y: -0.5020619}
+<<<<<<< HEAD
+  m_Offset: {x: -0.10931836, y: -0.43096197}
+=======
+<<<<<<< Updated upstream
+  m_Offset: {x: -0.0019924939, y: -0.43096197}
+=======
+  m_Offset: {x: -0.38265383, y: -1.8362926}
+>>>>>>> Stashed changes
+>>>>>>> DarraghBranch
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -668,5 +694,13 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.9624563, y: 0.2802763}
+<<<<<<< HEAD
+  m_Size: {x: 0.3327131, y: 0.13807607}
+=======
+<<<<<<< Updated upstream
+  m_Size: {x: 0.9086599, y: 0.13807607}
+=======
+  m_Size: {x: 1.2548752, y: 0.27612424}
+>>>>>>> Stashed changes
+>>>>>>> DarraghBranch
   m_EdgeRadius: 0
