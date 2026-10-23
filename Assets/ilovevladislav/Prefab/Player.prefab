@@ -475,6 +475,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Offset: {x: 0.18211162, y: 0.13374501}
   m_Size: {x: 0.26927954, y: 0.8596982}
 =======
@@ -486,6 +487,10 @@ CapsuleCollider2D:
   m_Size: {x: 0.89877915, y: 3.260285}
 >>>>>>> Stashed changes
 >>>>>>> DarraghBranch
+=======
+  m_Offset: {x: -0.0070369737, y: 0.049797058}
+  m_Size: {x: 0.77509254, y: 1.3973901}
+>>>>>>> parent of 2753b56 (Player scaling changes)
   m_Direction: 0
 --- !u!1 &5480711703124284029
 GameObject:
@@ -629,6 +634,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 0.468, z: 0}
 =======
 <<<<<<< Updated upstream
@@ -637,6 +643,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.672, z: 0}
 >>>>>>> Stashed changes
 >>>>>>> DarraghBranch
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> parent of 2753b56 (Player scaling changes)
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -677,6 +686,7 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Offset: {x: -0.10931836, y: -0.43096197}
 =======
 <<<<<<< Updated upstream
@@ -685,6 +695,9 @@ BoxCollider2D:
   m_Offset: {x: -0.38265383, y: -1.8362926}
 >>>>>>> Stashed changes
 >>>>>>> DarraghBranch
+=======
+  m_Offset: {x: -0.0019924939, y: -0.43096197}
+>>>>>>> parent of 2753b56 (Player scaling changes)
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -695,6 +708,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Size: {x: 0.3327131, y: 0.13807607}
 =======
 <<<<<<< Updated upstream
@@ -703,4 +717,7 @@ BoxCollider2D:
   m_Size: {x: 1.2548752, y: 0.27612424}
 >>>>>>> Stashed changes
 >>>>>>> DarraghBranch
+=======
+  m_Size: {x: 0.9086599, y: 0.13807607}
+>>>>>>> parent of 2753b56 (Player scaling changes)
   m_EdgeRadius: 0
