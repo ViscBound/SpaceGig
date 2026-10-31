@@ -60,16 +60,16 @@ public class EnemyPatrol : MonoBehaviour
     // Enter circle collider to have enemy follow you
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("PlayerDetection"))
         {
-            player = other.transform;
+            player = other.transform.parent;
             chasingPlayer = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("PlayerDetection"))
         {
             chasingPlayer = false;
             player = null;
