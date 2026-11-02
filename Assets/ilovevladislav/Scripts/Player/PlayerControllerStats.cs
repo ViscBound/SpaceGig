@@ -61,6 +61,7 @@ namespace PlatformerController2D.Runtime.Scripts.Player
 		public float WallSlideDeceleration = 5f;
 
 		[Header("WallJump")] 
+		public bool CanWallJump = false;
 		public Vector2 WallJumpClimb = new Vector2(20f,25f);
 		public Vector2 WallJumpOff = new Vector2(5f, 8f);
 		public Vector2 WallLeap = new Vector2(40f, 15f);
