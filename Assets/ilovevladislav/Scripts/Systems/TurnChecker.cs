@@ -6,7 +6,7 @@ namespace PlatformerController2D.Runtime.Scripts.Systems
 	{
 		public bool IsFacingRight { get; private set; } = true;
     
-		private readonly Transform _spriteTransform; // Ссылка на спрайт, а не на основной transform
+		private readonly Transform _spriteTransform;
 
 		public TurnChecker(Transform spriteTransform)
 		{

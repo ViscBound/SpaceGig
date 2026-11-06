@@ -1,16 +1,39 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace PlatformerController2D.Runtime.Scripts.Utilites
 {
     public class ResetZone : MonoBehaviour
     {
-        public Transform playerStartPosition; // Стартовая позиция игрока
-        public string playerTag = "Player"; // Тег игрока
+        public Transform playerStartPosition;
+        public string playerTag = "Player";
         public Transform playerTarget;
-    
+        public Slider slider;
+
+        private bool hasReset = false;
+
+        private void Update()
+        {
+            if (slider == null)
+                return;
+
+            if (slider.value <= 0f && !hasReset)
+            {
+                ResetPlayer(playerTarget != null
+                    ? playerTarget.gameObject
+                    : null);
+
+                hasReset = true;
+            }
+
+            if (slider.value > 0f)
+            {
+                hasReset = false;
+            }
+        }
+
         private void OnTriggerEnter2D(Collider2D other)
         {
-            // Проверяем, что это игрок
             if (other.CompareTag(playerTag))
             {
                 ResetPlayer(other.gameObject);
@@ -20,25 +43,26 @@ namespace PlatformerController2D.Runtime.Scripts.Utilites
         private void ResetPlayer(GameObject player)
         {
         
-            // Возвращаем игрока в стартовую позицию
             if (playerStartPosition != null)
             {
                 playerTarget.position = playerStartPosition.position;
             }
             else
             {
-                // Если стартовая позиция не задана, используем Vector3.zero
                 player.transform.position = Vector3.zero;
             }
         
-            // Останавливаем движение игрока (если у него есть Rigidbody2D)
             Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
             if (playerRb != null)
             {
                 playerRb.linearVelocity = Vector2.zero;
                 playerRb.angularVelocity = 0f;
             }
-        
+
+            if (slider != null)
+            {
+                slider.value = 100f;
+            }
         }
     }
 }

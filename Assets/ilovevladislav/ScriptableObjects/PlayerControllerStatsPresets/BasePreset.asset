@@ -17,13 +17,13 @@ MonoBehaviour:
   ResetNumberJumpOnWall: 1
   ResetNumberDashOnWall: 1
   CanJumpInTheAirTowardsTheWall: 1
-  WalkSpeed: 3
+  WalkSpeed: 4
   WalkAcceleration: 150
   WalkDeceleration: 150
-  RunSpeed: 15
+  RunSpeed: 12
   RunAcceleration: 150
   RunDeceleration: 150
-  MaxJumpHeight: 3.5
+  MaxJumpHeight: 4
   MinJumpHeight: 1
   TimeTillJumpApex: 0.3
   JumpHeightCompensationFactor: 1.06
@@ -31,11 +31,11 @@ MonoBehaviour:
   FallGravityMultiplayer: 1.2
   JumpHangTimeThreshold: 1
   JumpHangGravityMultiplier: 0.5
-  MaxNumberJumps: 2
+  MaxNumberJumps: 1
   AirAcceleration: 100
-  AirDeceleration: 5
+  AirDeceleration: 4.3
   RunAirAcceleration: 150
-  RunAirDeceleration: 23
+  RunAirDeceleration: 200
   WallFallSpeed: 10
   WallFallAirAcceleration: 150
   WallFallAirDeceleration: 23
@@ -45,12 +45,13 @@ MonoBehaviour:
   StartVelocityWallSlide: 2.5
   WallSlideSpeedMax: 3.5
   WallSlideDeceleration: 5
+  CanWallJump: 0
   WallJumpClimb: {x: 20, y: 25}
   WallJumpOff: {x: 5, y: 8}
   WallLeap: {x: 40, y: 15}
   DashVelocity: 30
-  MaxNumberDash: 2
-  CrouchMoveSpeed: 5
+  MaxNumberDash: 0
+  CrouchMoveSpeed: 6
   CrouchHeight: 0.6
   CrouchOffset: 0.2
   CrouchRollVelocity: 10
@@ -65,8 +66,8 @@ MonoBehaviour:
   MaxFallSpeed: 30
   MaxUpwardSpeed: 50
   GroundGravity: -1.5
-  BaseMovementAnimationSpeed: 3
-  BaseRunAnimationSpeed: 12
+  BaseMovementAnimationSpeed: 7.5
+  BaseRunAnimationSpeed: 15
   BaseCrouchAnimationSpeed: 5
   GroundDetectionRayLenght: 0.02
   HeadDetectionRayLength: 0.02
@@ -75,4 +76,4 @@ MonoBehaviour:
   WallDetectionRayHeightMultiplayer: 0.9
   GroundLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 8

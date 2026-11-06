@@ -38,28 +38,34 @@ public class OxygenSystem : MonoBehaviour
 
         if (currentOxygen <= 0f)
             return;
+        
 
         float drainRate = 0f;
 
         if (player.IsDashing)
         {
             drainRate = dashingDrain;
+            Debug.Log("dash");
         }
         else if (!player.IsGrounded)
         {
             drainRate = jumpingDrain;
+            Debug.Log("jump");
         }
         else if (player.IsCrouching)
         {
             drainRate = crouchingDrain;
+            Debug.Log("crouch");
         }
         else if (player.IsMoving && player.IsRunning)
         {
             drainRate = runningDrain;
+            Debug.Log("run");
         }
         else if (player.IsMoving)
         {
             drainRate = walkingDrain;
+            Debug.Log("walking");
         }
 
         currentOxygen -= drainRate * Time.deltaTime;

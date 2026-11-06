@@ -30,6 +30,8 @@ namespace PlatformerController2D.Runtime.Scripts.Player
 		private StateMachine.StateMachine _stateMachine;
 		private PlayerStateMachineFactory _stateMachineFactory;
 
+		private PlayerControllerStats runtimeStats;
+
 		public bool IsMoving =>
     		inputReader.GetMoveDirection().x != 0f;
 
@@ -45,9 +47,12 @@ namespace PlatformerController2D.Runtime.Scripts.Player
 		public bool IsDashing =>
 			_playerTimerRegistry.dashTimer.IsRunning;
 
+		public PlayerControllerStats Stats => runtimeStats;
 
 		private void Awake()
 		{
+			runtimeStats = Instantiate(playerControllerStats);
+
 			_turnChecker = new TurnChecker(transformForTurn);
 		
 			collisionsChecker.IsFacingRight = () => _turnChecker.IsFacingRight; 
@@ -58,7 +63,7 @@ namespace PlatformerController2D.Runtime.Scripts.Player
 			_animationController = new AnimationController(animator);
 		
 			_playerModulesFactory  = new PlayerModulesFactory();
-			_playerModules = _playerModulesFactory.CreateModules(playerControllerStats, collisionsChecker, _playerTimerRegistry, _turnChecker, colliderSpriteResizer);
+			_playerModules = _playerModulesFactory.CreateModules(runtimeStats, collisionsChecker, _playerTimerRegistry, _turnChecker, colliderSpriteResizer);
 
 			InitializeStateMachine();
 		}
@@ -67,7 +72,7 @@ namespace PlatformerController2D.Runtime.Scripts.Player
 		{
 			_stateMachineFactory = new PlayerStateMachineFactory(
 				inputReader,
-				playerControllerStats,
+				runtimeStats,
 				physicsHandler2D,
 				_turnChecker,
 				collisionsChecker,
@@ -79,6 +84,28 @@ namespace PlatformerController2D.Runtime.Scripts.Player
 
 			_stateMachine = _stateMachineFactory.CreateStateMachine();
 		}
+
+		public void UnlockAbility(AbilityType ability)
+        {
+            switch (ability)
+            {
+                case AbilityType.DoubleJump:
+                    runtimeStats.MaxNumberJumps = 2f;
+                    Debug.Log("Double Jump unlocked!");
+                    break;
+
+                case AbilityType.Dash:
+                    runtimeStats.MaxNumberDash = 1f;
+                    Debug.Log("Dash unlocked!");
+                    break;
+
+                case AbilityType.WallJump:
+                    runtimeStats.CanWallJump = true;
+                    Debug.Log("Wall Jump unlocked!");
+                    break;
+            }
+        }
+
 	
 		private void Update() 
 		{
