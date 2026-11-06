@@ -194,58 +194,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7813858}
   m_CullTransparentMesh: 1
---- !u!1 &50308849
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 50308850}
-  - component: {fileID: 50308851}
-  m_Layer: 0
-  m_Name: OxygenManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &50308850
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50308849}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.4345965, y: -0.795961, z: 0}
-  m_LocalScale: {x: 0.59999996, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 390033857}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &50308851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50308849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd6a3c66c900c7044aef400c7dc1bf87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OxygenSystem
-  oxygenSlider: {fileID: 990952073}
-  player: {fileID: 1446234217}
-  maxOxygen: 100
-  walkingDrain: 1
-  runningDrain: 4
-  crouchingDrain: 4
-  jumpingDrain: 3
-  dashingDrain: 10
 --- !u!1 &213469562
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,7 +391,7 @@ Transform:
   m_GameObject: {fileID: 218594008}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.41459656, y: 27.15, z: -10}
+  m_LocalPosition: {x: 0.41459656, y: 1.66, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -586,7 +534,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.41459656, y: 27.15, z: -10}
+  m_LocalPosition: {x: 0.41459656, y: 1.66, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1422,17 +1370,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2142035926128855977, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
-      propertyPath: resizeTarget
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.41459656
       objectReference: {fileID: 0}
     - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.15
+      value: 1.66
       objectReference: {fileID: 0}
     - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1466,41 +1410,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5022172761824226821, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5022172761824226821, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5022172761824226821, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5480711703124284029, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 4675982629936716170, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
+      propertyPath: oxygenSlider
+      value: 
+      objectReference: {fileID: 990952073}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 50308850}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
---- !u!114 &1446234217 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8412784963211783688, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
-  m_PrefabInstance: {fileID: 1446234216}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 467c597ac7d104b9e9707e1826bc4935, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1710808318
 GameObject:
   m_ObjectHideFlags: 0
