@@ -241,7 +241,7 @@ MonoBehaviour:
   oxygenSlider: {fileID: 990952073}
   player: {fileID: 1446234217}
   maxOxygen: 100
-  walkingDrain: 2
+  walkingDrain: 1
   runningDrain: 4
   crouchingDrain: 4
   jumpingDrain: 3
@@ -443,7 +443,7 @@ Transform:
   m_GameObject: {fileID: 218594008}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.41459656, y: 0.795961, z: -10}
+  m_LocalPosition: {x: 0.41459656, y: 27.15, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -586,7 +586,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.41459656, y: 0.795961, z: -10}
+  m_LocalPosition: {x: 0.41459656, y: 27.15, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -841,7 +841,11 @@ MonoBehaviour:
         m_SelectedSource:
           rid: -2
         m_Provider2DCache:
-          rid: -2
+          rid: 8202425060994842707
+    - rid: 8202425060994842707
+      type: {class: 'Provider2DCache`1[[UnityEngine.Rendering.Universal.Light2DProvider, Unity.RenderPipelines.Universal.2D.Runtime]]', ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_Cache: []
 --- !u!4 &619394802
 Transform:
   m_ObjectHideFlags: 0
@@ -1418,13 +1422,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2142035926128855977, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
+      propertyPath: resizeTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.41459656
       objectReference: {fileID: 0}
     - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.795961
+      value: 27.15
       objectReference: {fileID: 0}
     - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1457,6 +1465,18 @@ PrefabInstance:
     - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022172761824226821, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022172761824226821, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022172761824226821, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5480711703124284029, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
       propertyPath: m_IsActive
