@@ -93,7 +93,6 @@ namespace PlatformerController2D.Runtime.Scripts.Input
             return Mathf.Approximately(x, 0f) ? 0f : Mathf.Sign(x);
         }
 
-        // Сброс состояний кадра, вызывается внешним MonoBehaviour
         public void ResetFrameStates()
         {
             _dashHandler.State.ResetFrameState();
