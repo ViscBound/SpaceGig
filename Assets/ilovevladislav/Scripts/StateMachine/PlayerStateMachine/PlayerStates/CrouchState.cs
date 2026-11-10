@@ -36,7 +36,9 @@ namespace PlatformerController2D.Runtime.Scripts.StateMachine.PlayerStateMachine
 
 		public override void FixedUpdate()
 		{
-			_moveVelocity = _movementModule.HandleMovement(physicsHandler2D.GetVelocity(), inputReader.GetNormalizedHorizontalDirection(), playerControllerStats.CrouchMoveSpeed, playerControllerStats.CrouchAcceleration, playerControllerStats.CrouchDeceleration);
+			_moveVelocity = physicsHandler2D.GetVelocity();
+			_moveVelocity.x = 0f;
+			
 			physicsHandler2D.AddVelocity(_moveVelocity);
 		}
 
