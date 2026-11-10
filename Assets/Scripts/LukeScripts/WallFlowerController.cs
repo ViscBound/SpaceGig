@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class WallFlowerController : MonoBehaviour
@@ -54,10 +53,6 @@ public class WallFlowerController : MonoBehaviour
 
     void FireProjectile()
     {
-        float direction = Mathf.Sign(
-            playerHead.position.x - firePoint.position.x
-        );
-
         GameObject projectile = Instantiate(
             projectilePrefab,
             firePoint.position,
@@ -67,6 +62,6 @@ public class WallFlowerController : MonoBehaviour
         Projectile projectileScript =
             projectile.GetComponent<Projectile>();
 
-        projectileScript.Launch(new Vector2(direction, 0f));
+        projectileScript.Launch(Vector2.left);
     }
 }
