@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
@@ -7,10 +6,11 @@ public class AxeAttack : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private SpriteRenderer axeSprite;
-    [SerializeField] private Collider2D axeCollider;
+    [SerializeField] private Collider2D axeCollider; 
 
     [Header("Attack Settings")]
     [SerializeField] private float attackDuration = 0.2f;
+    [SerializeField] private int attackDamage = 20;
 
     [Header("Input")]
     [SerializeField] private InputActionReference attackAction;
@@ -62,10 +62,15 @@ public class AxeAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
+
         if (isAttacking &&
             other.CompareTag("Enemy") &&
-            !other.isTrigger)
+            !other.isTrigger && enemyHealth != null)
         {
+            
+            enemyHealth.TakeDamage(attackDamage);
+
             Debug.Log("Enemy hit");
         }
     }
