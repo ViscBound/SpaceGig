@@ -12065,7 +12065,7 @@ GameObject:
   - component: {fileID: 1120032517}
   - component: {fileID: 1120032516}
   m_Layer: 0
-  m_Name: ReserZone
+  m_Name: ResetZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12085,7 +12085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStartPosition: {fileID: 709101701}
   playerTag: Player
-  playerTarget: {fileID: 0}
+  playerTarget: {fileID: 1544496001}
   slider: {fileID: 0}
 --- !u!61 &1120032517
 BoxCollider2D:
@@ -12735,7 +12735,7 @@ MonoBehaviour:
   playerHead: {fileID: 1258163002}
   moveSpeed: 3
   minHeight: -3
-  maxHeight: 20
+  maxHeight: 17
   projectilePrefab: {fileID: 2968776789676073737, guid: 9c1656cb308d68244b40a05d9697003a, type: 3}
   firePoint: {fileID: 1966350267}
   fireInterval: 2
@@ -12787,7 +12787,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.23622417, y: -0.15865743}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -12797,7 +12797,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5288601, y: 2.3186195}
   m_EdgeRadius: 0
 --- !u!1 &1961504771
 GameObject:
@@ -12932,7 +12932,7 @@ Transform:
   m_GameObject: {fileID: 1966350266}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.41, y: 0.47, z: 0}
+  m_LocalPosition: {x: -0.41, y: 0.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12991,6 +12991,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2709312273273797991, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3232317782637156252, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.3279085
