@@ -16,16 +16,14 @@ namespace PlatformerController2D.Runtime.Scripts.PhysicalModules.Modules
     
         public Vector2 HandleMovement(Vector2 moveVelocity, Vector2 moveDirection, float speed, float acceleration, float deceleration, InterpolationType interpolationType = InterpolationType.MoveTowards)
         {
-            // Вычисление вектора направления перемноженного на скорость
             _targetVelocity = moveDirection != Vector2.zero
                 ? new Vector2(moveDirection.x, 0f) * speed
                 : Vector2.zero;
         
-            // Вычисление ускорения или замедления игрока в воздухе или на земле
             float smoothFactor = moveDirection != Vector2.zero
                 ? acceleration
                 : deceleration;
-
+            
             switch (interpolationType)
             {
                 case InterpolationType.MoveTowards:
@@ -35,7 +33,7 @@ namespace PlatformerController2D.Runtime.Scripts.PhysicalModules.Modules
                     moveVelocity.x = ApplyLerp(moveVelocity, smoothFactor);
                     break;
             }
-
+    
             return moveVelocity;
         }
 
@@ -50,9 +48,9 @@ namespace PlatformerController2D.Runtime.Scripts.PhysicalModules.Modules
             return moveVelocityX;
         }
     
-        private float ApplyLerp(Vector2 currentVelocity, float smoothFactor) // При использовании нужно уменьшить значения акселерации в прыжке
+        private float ApplyLerp(Vector2 currentVelocity, float smoothFactor)
         {
-            var moveVelocityX = Vector2.Lerp(currentVelocity, _targetVelocity, smoothFactor * Time.fixedDeltaTime).x; // Старый метод, сейчас использую MoveTowards
+            var moveVelocityX = Vector2.Lerp(currentVelocity, _targetVelocity, smoothFactor * Time.fixedDeltaTime).x;
         
             // if (Mathf.Abs(moveVelocityX) < 0.1f) 
             // {
