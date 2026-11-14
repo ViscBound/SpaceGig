@@ -12314,6 +12314,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 50
   currentHealth: 0
+  enemySprite: {fileID: 1418934000}
+--- !u!212 &1418934000 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2709312273273797991, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
+  m_PrefabInstance: {fileID: 2050118177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1469105393
 GameObject:
   m_ObjectHideFlags: 0
@@ -12753,6 +12759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 20
   currentHealth: 0
+  enemySprite: {fileID: 1660558476}
 --- !u!61 &1660558480
 BoxCollider2D:
   m_ObjectHideFlags: 0
