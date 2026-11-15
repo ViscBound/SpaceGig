@@ -77,3 +77,9 @@ MonoBehaviour:
   GroundLayer:
     serializedVersion: 2
     m_Bits: 8
+  WallLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  OneWayPlatforms:
+    serializedVersion: 2
+    m_Bits: 64

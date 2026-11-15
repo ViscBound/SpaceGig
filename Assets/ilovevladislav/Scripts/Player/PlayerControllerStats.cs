@@ -118,6 +118,8 @@ namespace PlatformerController2D.Runtime.Scripts.Player
 		public float WallDetectionRayLength	 = 0.015f;
 		[Range(0.01f, 3f)]public float WallDetectionRayHeightMultiplayer = 0.9f;
 		public LayerMask GroundLayer;
+		public LayerMask WallLayer;
+		public LayerMask OneWayPlatforms;
 	
 	
 		public float AdjustedJumpHeight => MaxJumpHeight * JumpHeightCompensationFactor;  

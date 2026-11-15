@@ -9,6 +9,8 @@ namespace PlatformerController2D.Runtime.Scripts.Systems
 
         [SerializeField] private Collider2D FeetCollider;
         [SerializeField] private Collider2D BodyCollider;
+        public Collider2D Feet => FeetCollider;
+        public Collider2D Body => BodyCollider;
 
         public bool IsGrounded { get; private set; }
         public bool BumpedHead { get; private set; }
@@ -123,7 +125,7 @@ namespace PlatformerController2D.Runtime.Scripts.Systems
             Vector2 boxCastOrigin = new Vector2(originEndPoint, BodyCollider.bounds.center.y);
             Vector2 boxCastSize = new Vector2(stats.WallDetectionRayLength, adjustedHeight);
 
-            _wallHit = Physics2D.BoxCast(boxCastOrigin, boxCastSize, 0f, transform.right, stats.WallDetectionRayLength, stats.GroundLayer);
+            _wallHit = Physics2D.BoxCast(boxCastOrigin, boxCastSize, 0f, transform.right, stats.WallDetectionRayLength, stats.WallLayer);
        
             if (_wallHit.collider != null)
             {
