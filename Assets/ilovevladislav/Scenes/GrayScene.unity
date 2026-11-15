@@ -12339,6 +12339,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410213096}
   m_CullTransparentMesh: 1
+--- !u!1 &1418933989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787663921495028197, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
+  m_PrefabInstance: {fileID: 2050118177}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1418933995
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418933989}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 3.6086729
+--- !u!114 &1418933996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418933989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c827a28f910f174da0d19ffc956c1bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  maxHealth: 50
+  currentHealth: 0
+  enemySprite: {fileID: 1418934000}
+--- !u!212 &1418934000 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2709312273273797991, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
+  m_PrefabInstance: {fileID: 2050118177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1469105393
 GameObject:
   m_ObjectHideFlags: 0
@@ -12778,7 +12839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 20
   currentHealth: 0
-  enemySprite: {fileID: 0}
+  enemySprite: {fileID: 1660558476}
 --- !u!61 &1660558480
 BoxCollider2D:
   m_ObjectHideFlags: 0

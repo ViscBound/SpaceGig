@@ -23,7 +23,7 @@ MonoBehaviour:
   RunSpeed: 12
   RunAcceleration: 150
   RunDeceleration: 150
-  MaxJumpHeight: 4
+  MaxJumpHeight: 4.5
   MinJumpHeight: 1
   TimeTillJumpApex: 0.3
   JumpHeightCompensationFactor: 1.06
@@ -31,7 +31,7 @@ MonoBehaviour:
   FallGravityMultiplayer: 1.2
   JumpHangTimeThreshold: 1
   JumpHangGravityMultiplier: 0.5
-  MaxNumberJumps: 2
+  MaxNumberJumps: 1
   AirAcceleration: 100
   AirDeceleration: 4.3
   RunAirAcceleration: 150
