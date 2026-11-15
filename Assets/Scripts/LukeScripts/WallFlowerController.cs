@@ -5,10 +5,10 @@ public class WallFlowerController : MonoBehaviour
     [Header("Player Settings")]
     public Transform playerHead;
 
-    [Header("Movement Settings")]
+    [Header("Movement Boundaries")]
+    public Transform pointA;
+    public Transform pointB;
     public float moveSpeed = 3f;
-    public float minHeight = -3f;
-    public float maxHeight = 3f;
 
     [Header("Projectile Settings")]
     public GameObject projectilePrefab;
@@ -19,16 +19,20 @@ public class WallFlowerController : MonoBehaviour
 
     void Update()
     {
-        if (playerHead == null)
+        if (playerHead == null || pointA == null || pointB == null)
             return;
 
-        // Move to player's head
-        float targetHeight = Mathf.Clamp(
-            playerHead.position.y,
-            minHeight,
-            maxHeight
+        // Player's head
+        float targetHeight = playerHead.position.y;
+
+        // Can only move between Point A and Point B
+        targetHeight = Mathf.Clamp(
+            targetHeight,
+            Mathf.Min(pointA.position.y, pointB.position.y),
+            Mathf.Max(pointA.position.y, pointB.position.y)
         );
 
+        // Move to player's head
         Vector3 targetPosition = new Vector3(
             transform.position.x,
             targetHeight,
@@ -41,7 +45,7 @@ public class WallFlowerController : MonoBehaviour
             moveSpeed * Time.deltaTime
         );
 
-        // Fire projectile
+        // Fire
         fireTimer += Time.deltaTime;
 
         if (fireTimer >= fireInterval)
@@ -62,6 +66,21 @@ public class WallFlowerController : MonoBehaviour
         Projectile projectileScript =
             projectile.GetComponent<Projectile>();
 
+        // Always shoot left
         projectileScript.Launch(Vector2.left);
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (pointA != null)
+            Gizmos.DrawWireSphere(pointA.position, 0.5f);
+
+        if (pointB != null)
+            Gizmos.DrawWireSphere(pointB.position, 0.5f);
+
+        if (pointA != null && pointB != null)
+        {
+            Gizmos.DrawLine(pointA.position, pointB.position);
+        }
     }
 }
