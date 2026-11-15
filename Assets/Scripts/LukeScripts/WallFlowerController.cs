@@ -2,6 +2,12 @@ using UnityEngine;
 
 public class WallFlowerController : MonoBehaviour
 {
+    public enum FiringDirection
+    {
+        Left,
+        Right
+    }
+
     [Header("Player Settings")]
     public Transform playerHead;
 
@@ -14,6 +20,7 @@ public class WallFlowerController : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform firePoint;
     public float fireInterval = 2f;
+    public FiringDirection firingDirection = FiringDirection.Left;
 
     private float fireTimer;
 
@@ -22,10 +29,9 @@ public class WallFlowerController : MonoBehaviour
         if (playerHead == null || pointA == null || pointB == null)
             return;
 
-        // Player's head
         float targetHeight = playerHead.position.y;
 
-        // Can only move between Point A and Point B
+        // Move between Point A and Point B
         targetHeight = Mathf.Clamp(
             targetHeight,
             Mathf.Min(pointA.position.y, pointB.position.y),
@@ -66,8 +72,12 @@ public class WallFlowerController : MonoBehaviour
         Projectile projectileScript =
             projectile.GetComponent<Projectile>();
 
-        // Always shoot left
-        projectileScript.Launch(Vector2.left);
+        // Choose direction to fire
+        Vector2 direction = firingDirection == FiringDirection.Left
+            ? Vector2.left
+            : Vector2.right;
+
+        projectileScript.Launch(direction);
     }
 
     private void OnDrawGizmos()
@@ -79,8 +89,6 @@ public class WallFlowerController : MonoBehaviour
             Gizmos.DrawWireSphere(pointB.position, 0.5f);
 
         if (pointA != null && pointB != null)
-        {
             Gizmos.DrawLine(pointA.position, pointB.position);
-        }
     }
 }

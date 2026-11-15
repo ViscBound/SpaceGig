@@ -134,7 +134,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.6098797, y: 0.6288245}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 4, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -156,9 +156,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WallFlowerController
   playerHead: {fileID: 0}
+  pointA: {fileID: 0}
+  pointB: {fileID: 0}
   moveSpeed: 3
-  minHeight: -3
-  maxHeight: 20
   projectilePrefab: {fileID: 2968776789676073737, guid: 9c1656cb308d68244b40a05d9697003a, type: 3}
   firePoint: {fileID: 4391633395903037256}
   fireInterval: 2
@@ -176,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 100
   currentHealth: 0
+  enemySprite: {fileID: 1220435205812337024}
 --- !u!95 &3472464266420267661
 Animator:
   serializedVersion: 7

@@ -17,6 +17,21 @@ public class Projectile : MonoBehaviour
     public void Launch(Vector2 launchDirection)
     {
         direction = launchDirection.normalized;
+
+        // Flip depending on firing direction
+        Vector3 scale = transform.localScale;
+
+        if (direction.x < 0)
+        {
+            scale.x = Mathf.Abs(scale.x);
+        }
+        else
+        {
+            scale.x = -Mathf.Abs(scale.x);
+        }
+
+        transform.localScale = scale;
+
         rb.linearVelocity = direction * speed;
 
         Destroy(gameObject, lifetime);
@@ -26,7 +41,7 @@ public class Projectile : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Player damage here when ready
+            // Player damage here
             Destroy(gameObject);
         }
     }
