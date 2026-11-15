@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class EnemyHealth : MonoBehaviour
     [Header("Enemy")]
     [SerializeField] private SpriteRenderer enemySprite;
     private Color originalColour;
+
+    [Header("Events")]
+    public UnityEvent onDeath;
 
     void Start()
     {
@@ -42,6 +46,8 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log(gameObject.name + " has died!");
+
+        onDeath?.Invoke();
 
         Destroy(gameObject);
     }
