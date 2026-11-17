@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 9070251453299866681}
   - component: {fileID: 1448455052412591612}
   - component: {fileID: 6554580704137442295}
+  - component: {fileID: 6997760616827296099}
   - component: {fileID: 7316487063455168867}
   m_Layer: 0
   m_Name: Player
@@ -277,6 +278,26 @@ MonoBehaviour:
   attackDuration: 0.4
   attackDamage: 20
   attackAction: {fileID: 385797239366054640, guid: 0c01ef61175cf41e5830275658fc9428, type: 3}
+--- !u!114 &6997760616827296099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301960139076022574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd6a3c66c900c7044aef400c7dc1bf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OxygenSystem
+  oxygenSlider: {fileID: 0}
+  player: {fileID: 8412784963211783688}
+  maxOxygen: 100
+  walkingDrain: 2
+  runningDrain: 6
+  crouchingDrain: 1
+  jumpingDrain: 4
+  dashingDrain: 10
 --- !u!96 &7316487063455168867
 TrailRenderer:
   serializedVersion: 4

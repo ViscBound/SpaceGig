@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour
     {
         direction = launchDirection.normalized;
 
-        // Flip depending on firing direction
+        // Flip sprite depending on firing direction
         Vector3 scale = transform.localScale;
 
         if (direction.x < 0)
@@ -36,12 +36,19 @@ public class Projectile : MonoBehaviour
 
         Destroy(gameObject, lifetime);
     }
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            // Player damage here
+            OxygenSystem oxygen = other.GetComponentInParent<OxygenSystem>();
+
+            if (oxygen != null)
+            {
+                oxygen.TakeDamage(damage);
+            }
+
+            // Destroy projectile on impact
             Destroy(gameObject);
         }
     }
