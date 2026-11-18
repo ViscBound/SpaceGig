@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.UI;
 using PlatformerController2D.Runtime.Scripts.Player;
@@ -23,54 +22,59 @@ public class OxygenSystem : MonoBehaviour
     {
         currentOxygen = maxOxygen;
 
-        if (oxygenSlider != null)
-        {
-            oxygenSlider.minValue = 0f;
-            oxygenSlider.maxValue = maxOxygen;
-            oxygenSlider.value = currentOxygen;
-        }
+        UpdateOxygenUI();
     }
 
     private void Update()
     {
-        if (oxygenSlider == null || player == null)
+        if (player == null || currentOxygen <= 0f)
             return;
-
-        if (currentOxygen <= 0f)
-            return;
-        
 
         float drainRate = 0f;
 
         if (player.IsDashing)
         {
             drainRate = dashingDrain;
-            Debug.Log("dash");
         }
         else if (!player.IsGrounded)
         {
             drainRate = jumpingDrain;
-            Debug.Log("jump");
         }
         else if (player.IsCrouching)
         {
             drainRate = crouchingDrain;
-            Debug.Log("crouch");
         }
         else if (player.IsMoving && player.IsRunning)
         {
             drainRate = runningDrain;
-            Debug.Log("run");
         }
         else if (player.IsMoving)
         {
             drainRate = walkingDrain;
-            Debug.Log("walking");
         }
 
         currentOxygen -= drainRate * Time.deltaTime;
         currentOxygen = Mathf.Clamp(currentOxygen, 0f, maxOxygen);
 
-        oxygenSlider.value = currentOxygen;
+        UpdateOxygenUI();
+    }
+
+    // Enemies and projectile dammage
+    public void TakeDamage(float damage)
+    {
+        currentOxygen -= damage;
+        currentOxygen = Mathf.Clamp(currentOxygen, 0f, maxOxygen);
+
+        UpdateOxygenUI();
+
+        Debug.Log("Player took " + damage + " damage! Oxygen: " + currentOxygen);
+    }
+
+    private void UpdateOxygenUI()
+    {
+        if (oxygenSlider != null)
+        {
+            oxygenSlider.value = currentOxygen;
+        }
     }
 }
