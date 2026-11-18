@@ -10,17 +10,27 @@ public class EnemyPatrol : MonoBehaviour
     private Transform currentPoint;
     private Transform player;
 
+    private SpriteRenderer sprite;
+    private Animator animator;
+    private bool Orientation;
+
+
     private bool chasingPlayer = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
+        animator= GetComponent<Animator>();
         currentPoint = pointB.transform;
+        Debug.Log(sprite);
+        //sprite.flipX = true;
     }
 
 
     void Update()
     {
+        //Debug.Log(rb.linearVelocityX + "linear Velocity");
         if (chasingPlayer && player != null)
         {
             // Chasing player horizontally
@@ -29,7 +39,9 @@ public class EnemyPatrol : MonoBehaviour
             );
 
             rb.linearVelocity = new Vector2(direction * speed, 0f);
+
         }
+        
         else
         {
             // Patrolling point A and point B
@@ -53,6 +65,26 @@ public class EnemyPatrol : MonoBehaviour
             );
 
             rb.linearVelocity = new Vector2(direction * speed, 0f);
+            
+
+        }
+        if (rb.linearVelocityX < 0f)
+        {
+            animator.SetBool("Moving", true);
+            Orientation = false;
+            sprite.flipX = Orientation;
+            Debug.Log("true Orientation");
+        }
+        else if (rb.linearVelocityX > 0f)
+        {
+            animator.SetBool("Moving", true);
+            Orientation = true;
+            sprite.flipX = Orientation;
+            //Debug.Log("false Orientation");
+        }
+        else
+        {
+            animator.SetBool("Moving", false);
         }
     }
 
