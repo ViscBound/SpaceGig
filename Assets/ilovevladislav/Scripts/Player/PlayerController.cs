@@ -3,6 +3,7 @@ using PlatformerController2D.Runtime.Scripts.PhysicalModules;
 using PlatformerController2D.Runtime.Scripts.StateMachine.PlayerStateMachine.StateMachineFactory;
 using PlatformerController2D.Runtime.Scripts.Systems;
 using UnityEngine;
+using PlatformerController2D.Runtime.Scripts.StateMachine;
 
 namespace PlatformerController2D.Runtime.Scripts.Player
 {
@@ -28,6 +29,7 @@ namespace PlatformerController2D.Runtime.Scripts.Player
 		private PlayerModules _playerModules;
 	
 		private StateMachine.StateMachine _stateMachine;
+		public IState CurrentState => _stateMachine?.CurrentState;
 		private PlayerStateMachineFactory _stateMachineFactory;
 
 		private PlayerControllerStats runtimeStats;

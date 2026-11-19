@@ -8,16 +8,17 @@ namespace PlatformerController2D.Runtime.Scripts.Utilites
         public Transform playerStartPosition;
         public string playerTag = "Player";
         public Transform playerTarget;
-        public Slider slider;
+        public Slider oxygenSlider;
+        public OxygenSystem oxygen;
 
         private bool hasReset = false;
 
         private void Update()
         {
-            if (slider == null)
+            if (oxygenSlider == null)
                 return;
 
-            if (slider.value <= 0f && !hasReset)
+            if (oxygenSlider.value <= 0f && !hasReset)
             {
                 ResetPlayer(playerTarget != null
                     ? playerTarget.gameObject
@@ -26,7 +27,7 @@ namespace PlatformerController2D.Runtime.Scripts.Utilites
                 hasReset = true;
             }
 
-            if (slider.value > 0f)
+            if (oxygenSlider.value > 0f)
             {
                 hasReset = false;
             }
@@ -59,9 +60,9 @@ namespace PlatformerController2D.Runtime.Scripts.Utilites
                 playerRb.angularVelocity = 0f;
             }
 
-            if (slider != null)
+            if (oxygenSlider != null)
             {
-                slider.value = 100f;
+                oxygen.currentOxygen = 100f;
             }
         }
     }

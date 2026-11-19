@@ -6,6 +6,7 @@ namespace PlatformerController2D.Runtime.Scripts.StateMachine
 	public class StateMachine
 	{
 		StateNode current;
+		public IState CurrentState => current?.State;
 		Dictionary<Type, StateNode> nodes = new();
 		HashSet<ITransition> anyTransition = new();
 	

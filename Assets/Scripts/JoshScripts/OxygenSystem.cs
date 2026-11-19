@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using PlatformerController2D.Runtime.Scripts.Player;
+using PlatformerController2D.Runtime.Scripts.StateMachine;
+using PlatformerController2D.Runtime.Scripts.StateMachine.PlayerStateMachine.PlayerState;
 
 public class OxygenSystem : MonoBehaviour
 {
@@ -12,11 +14,11 @@ public class OxygenSystem : MonoBehaviour
     [SerializeField] private float maxOxygen = 100f;
     [SerializeField] private float walkingDrain = 2f;
     [SerializeField] private float runningDrain = 6f;
-    [SerializeField] private float crouchingDrain = 1f;
-    [SerializeField] private float jumpingDrain = 4f;
+    [SerializeField] private int jumpingDrain = 4;
     [SerializeField] private float dashingDrain = 10f;
 
-    private float currentOxygen;
+    public float currentOxygen;
+    private IState previousState;
 
     private void Start()
     {
@@ -32,29 +34,21 @@ public class OxygenSystem : MonoBehaviour
 
         float drainRate = 0f;
 
-        if (player.IsDashing)
-        {
-            drainRate = dashingDrain;
-        }
-        else if (!player.IsGrounded)
-        {
-            drainRate = jumpingDrain;
-        }
-        else if (player.IsCrouching)
-        {
-            drainRate = crouchingDrain;
-        }
-        else if (player.IsMoving && player.IsRunning)
-        {
+        if (player.CurrentState is RunState)
             drainRate = runningDrain;
-        }
-        else if (player.IsMoving)
-        {
+        
+        else if (player.CurrentState is LocomotionState)
             drainRate = walkingDrain;
-        }
+        
+        else if ((player.CurrentState is JumpState || player.CurrentState is RunJumpState) && player.CurrentState != previousState)
+            currentOxygen -= jumpingDrain;
+
+        else if (player.CurrentState is DashState && player.CurrentState != previousState)
+            currentOxygen -= dashingDrain;
 
         currentOxygen -= drainRate * Time.deltaTime;
         currentOxygen = Mathf.Clamp(currentOxygen, 0f, maxOxygen);
+        previousState = player.CurrentState;
 
         UpdateOxygenUI();
     }
