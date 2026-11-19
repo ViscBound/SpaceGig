@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4680234390372143679}
   - component: {fileID: 6726932366611551460}
   - component: {fileID: 7465195200330315421}
+  - component: {fileID: 1917062533942265330}
   m_Layer: 0
   m_Name: Enemy2Projectile
   m_TagString: Untagged
@@ -30,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 23.314, y: 1.743, z: 0}
-  m_LocalScale: {x: 0.57880247, y: 0.57880247, z: 0.57880247}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -84,8 +85,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1328020039774297929, guid: a6c4024ad9e72ca4f9053caf2cdd0e40, type: 3}
-  m_Color: {r: 0.90933144, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: -8548999463067722153, guid: 5df698777fe8099469b88b94d1aa9f2f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -173,3 +174,25 @@ MonoBehaviour:
   speed: 6
   damage: 10
   lifetime: 5
+--- !u!95 &1917062533942265330
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2968776789676073737}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f95b539edb61ab6439f56a9c11bc9aca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
