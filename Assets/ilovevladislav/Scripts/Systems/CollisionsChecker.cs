@@ -101,20 +101,20 @@ namespace PlatformerController2D.Runtime.Scripts.Systems
 
         private void CheckBumpedHead()
         {
-            var bounds = FeetCollider.bounds;
-            float currentHeadDetectionRayLength = (IsSitting?.Invoke() ?? false) ? 0.4f : stats.HeadDetectionRayLength; // FIXME Заменить 0.4
+        //    var bounds = FeetCollider.bounds;
+        //    float currentHeadDetectionRayLength = (IsSitting?.Invoke() ?? false) ? 0.4f : stats.HeadDetectionRayLength; // FIXME Заменить 0.4
 
-            Vector2 boxCastOrigin = new Vector2(bounds.center.x, BodyCollider.bounds.max.y);
-            Vector2 boxCastSize = new Vector2(bounds.size.x * stats.HeadWidth, stats.HeadDetectionRayLength);
+        //    Vector2 boxCastOrigin = new Vector2(bounds.center.x, BodyCollider.bounds.max.y);
+        //    Vector2 boxCastSize = new Vector2(bounds.size.x * stats.HeadWidth, stats.HeadDetectionRayLength);
 
-            _headHit = Physics2D.BoxCast(boxCastOrigin, boxCastSize, 0f, Vector2.up, currentHeadDetectionRayLength, stats.GroundLayer);
-            BumpedHead = _headHit.collider != null;
+        //    _headHit = Physics2D.BoxCast(boxCastOrigin, boxCastSize, 0f, Vector2.up, currentHeadDetectionRayLength, stats.GroundLayer);
+        //    BumpedHead = _headHit.collider != null;
 
-            Color rayColor = BumpedHead ? Color.green : Color.red;
+        //    Color rayColor = BumpedHead ? Color.green : Color.red;
 
-            Debug.DrawRay(new Vector2(boxCastOrigin.x - boxCastSize.x / 2 * stats.HeadWidth, boxCastOrigin.y), Vector2.up * currentHeadDetectionRayLength, rayColor);
-            Debug.DrawRay(new Vector2(boxCastOrigin.x + boxCastSize.x / 2 * stats.HeadWidth, boxCastOrigin.y), Vector2.up * currentHeadDetectionRayLength, rayColor);
-            Debug.DrawRay(new Vector2(boxCastOrigin.x - boxCastSize.x / 2 * stats.HeadWidth, currentHeadDetectionRayLength + boxCastOrigin.y), Vector2.right * boxCastSize.x * stats.HeadWidth, rayColor);
+        //    Debug.DrawRay(new Vector2(boxCastOrigin.x - boxCastSize.x / 2 * stats.HeadWidth, boxCastOrigin.y), Vector2.up * currentHeadDetectionRayLength, rayColor);
+        //    Debug.DrawRay(new Vector2(boxCastOrigin.x + boxCastSize.x / 2 * stats.HeadWidth, boxCastOrigin.y), Vector2.up * currentHeadDetectionRayLength, rayColor);
+        //    Debug.DrawRay(new Vector2(boxCastOrigin.x - boxCastSize.x / 2 * stats.HeadWidth, currentHeadDetectionRayLength + boxCastOrigin.y), Vector2.right * boxCastSize.x * stats.HeadWidth, rayColor);
         }
 
         private void CheckTouchWall()
