@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
   speed: 6
   damage: 10
-  lifetime: 5
+  lifetime: 3.5
 --- !u!95 &1917062533942265330
 Animator:
   serializedVersion: 7

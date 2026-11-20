@@ -10,6 +10,8 @@ public class EnemyPatrol : MonoBehaviour
     [Header("Attack Settings")]
     public float attackRange = 1.5f;
     public float attackCooldown = 1.5f;
+    public float attackWindup = 0.7f;
+    public float hitboxDuration = 0.2f;
     public Collider2D attackHitbox;
     public EnemyAttackHitbox hitboxScript;
 
@@ -87,7 +89,7 @@ public class EnemyPatrol : MonoBehaviour
         }
         else if (!isAttacking)
         {
-            // Original patrol behaviour
+            // Patrolling
             float enemyX = transform.position.x;
             float pointAX = pointA.transform.position.x;
             float pointBX = pointB.transform.position.x;
@@ -159,23 +161,28 @@ public class EnemyPatrol : MonoBehaviour
 
         rb.linearVelocity = Vector2.zero;
 
+        FacePlayer();
+
         animator.SetBool("Moving", false);
 
         // TEMP: UNTIL ATTACK ANIM IS MADE
         if (hitboxScript != null)
-            hitboxScript.EnableHitbox();
+            hitboxScript.ShowWarning();
 
-        Invoke(nameof(AttackFinished), 0.5f);
+        Invoke(nameof(EnableAttackHitbox), attackWindup);
+
+        Invoke(nameof(AttackFinished),
+        attackWindup + hitboxDuration);
         // END TEMP
 
         // animator.SetTrigger("Attack");
     }
 
-    // public void EnableAttackHitbox()
-    // {
-    //     if (hitboxScript != null)
-    //         hitboxScript.EnableHitbox();
-    // }
+    public void EnableAttackHitbox()
+    {
+        if (hitboxScript != null)
+            hitboxScript.EnableHitbox();
+    }
 
     // public void DisableAttackHitbox()
     // {
