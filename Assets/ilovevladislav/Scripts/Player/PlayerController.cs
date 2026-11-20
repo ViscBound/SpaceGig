@@ -4,6 +4,7 @@ using PlatformerController2D.Runtime.Scripts.StateMachine.PlayerStateMachine.Sta
 using PlatformerController2D.Runtime.Scripts.Systems;
 using UnityEngine;
 using PlatformerController2D.Runtime.Scripts.StateMachine;
+using PlatformerController2D.Runtime.Scripts.Player;
 
 namespace PlatformerController2D.Runtime.Scripts.Player
 {
@@ -33,6 +34,7 @@ namespace PlatformerController2D.Runtime.Scripts.Player
 		private PlayerStateMachineFactory _stateMachineFactory;
 
 		private PlayerControllerStats runtimeStats;
+		private CollisionsChecker collisionsCheck;
 
 		public bool IsMoving =>
     		inputReader.GetMoveDirection().x != 0f;
@@ -102,7 +104,7 @@ namespace PlatformerController2D.Runtime.Scripts.Player
                     break;
 
                 case AbilityType.WallJump:
-                    runtimeStats.CanWallJump = true;
+                    collisionsCheck.WallJumpUnlocked = true;
                     Debug.Log("Wall Jump unlocked!");
                     break;
             }
