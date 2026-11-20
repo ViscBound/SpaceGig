@@ -25,6 +25,8 @@ public class EnemyPatrol : MonoBehaviour
     private bool isAttacking = false;
     private float nextAttackTime;
 
+    public bool TouchingPlayer;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,6 +39,8 @@ public class EnemyPatrol : MonoBehaviour
         {
             attackHitbox.enabled = false;
         }
+
+        TouchingPlayer = false;
             
     }
 
@@ -69,8 +73,10 @@ public class EnemyPatrol : MonoBehaviour
                 float direction = Mathf.Sign(
                     player.position.x - transform.position.x
                 );
-
-                rb.linearVelocity = new Vector2(direction * speed, 0f);
+                if (!TouchingPlayer)
+                {
+                    rb.linearVelocity = new Vector2(direction * speed, 0f);
+                }
 
                 UpdateFacing();
             }
@@ -98,8 +104,10 @@ public class EnemyPatrol : MonoBehaviour
             float direction = Mathf.Sign(
                 currentPoint.position.x - enemyX
             );
-
-            rb.linearVelocity = new Vector2(direction * speed, 0f);
+            if (!TouchingPlayer)
+            {
+                rb.linearVelocity = new Vector2(direction * speed, 0f);
+            }
 
             UpdateFacing();
         }
@@ -184,6 +192,7 @@ public class EnemyPatrol : MonoBehaviour
         isAttacking = false;
     }
 
+   
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("PlayerDetection"))
@@ -209,5 +218,22 @@ public class EnemyPatrol : MonoBehaviour
 
         if (pointB != null)
             Gizmos.DrawWireSphere(pointB.transform.position, 0.5f);
+    }
+    //hi i darragh added this to freeze enemy when touching player 
+    //just added a bool to any instances of updating the velocity to disable them if bool is true
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("player touched");
+            TouchingPlayer = true;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            TouchingPlayer = false;
+        }
     }
 }

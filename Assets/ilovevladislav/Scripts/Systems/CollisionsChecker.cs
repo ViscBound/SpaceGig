@@ -15,6 +15,7 @@ namespace PlatformerController2D.Runtime.Scripts.Systems
         public bool IsGrounded { get; private set; }
         public bool BumpedHead { get; private set; }
         public bool IsTouchingWall { get; private set; }
+        public bool WallJumpUnlocked;
         public bool IsInWallZone { get; private set; } 
 
         private RaycastHit2D _headHit;
@@ -78,11 +79,17 @@ namespace PlatformerController2D.Runtime.Scripts.Systems
 
             if (!_wasTouchingWall && IsTouchingWall)
             {
-                OnWallTouched?.Invoke();
+                if (WallJumpUnlocked)
+                {
+                    OnWallTouched?.Invoke();
+                }
             }
             else if (_wasTouchingWall && !IsTouchingWall)
             {
-                OnWallLeft?.Invoke();
+                if (WallJumpUnlocked)
+                {
+                    OnWallLeft?.Invoke();
+                }
             }
 
             _wasGrounded = IsGrounded;
@@ -130,8 +137,11 @@ namespace PlatformerController2D.Runtime.Scripts.Systems
             if (_wallHit.collider != null)
             {
                 _lastWallHit = _wallHit;
-                _lastWallFacingRight = IsFacingRight(); 
-                IsTouchingWall = true;
+                _lastWallFacingRight = IsFacingRight();
+                if (WallJumpUnlocked)
+                {
+                    IsTouchingWall = true;
+                }
             }
             else
             {
