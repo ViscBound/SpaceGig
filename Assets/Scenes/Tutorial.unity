@@ -168,7 +168,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 2, z: -1}
+  FollowOffset: {x: 0, y: 3, z: -1}
 --- !u!114 &128790949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +221,7 @@ Transform:
   m_GameObject: {fileID: 128790946}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.93, y: 3.6599998, z: -1}
+  m_LocalPosition: {x: -18.93, y: 4.66, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44091,9 +44091,17 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5672683117340780191, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7787663921495028197, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
       propertyPath: m_Name
       value: PatrolEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787663921495028197, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8404263327459976408, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
       propertyPath: pointA
@@ -44432,7 +44440,7 @@ Transform:
   m_GameObject: {fileID: 467589231}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.93, y: 3.6599998, z: -1}
+  m_LocalPosition: {x: -18.93, y: 4.66, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44864,7 +44872,7 @@ Transform:
   m_GameObject: {fileID: 963850537}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09, y: 0.67, z: 0}
+  m_LocalPosition: {x: -9.8, y: 0.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
