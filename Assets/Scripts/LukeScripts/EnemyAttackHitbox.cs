@@ -64,8 +64,8 @@ public class EnemyAttackHitbox : MonoBehaviour
             attackVisual.enabled = true;
 
             parent = gameObject.transform.parent.gameObject.GetComponent<EnemyPatrol>();
-            parent.TouchingPlayer = stop;
             stop = true;
+            parent.TouchingPlayer = stop;
         }
     }
 
@@ -88,6 +88,7 @@ public class EnemyAttackHitbox : MonoBehaviour
         if (attackVisual != null)
             attackVisual.enabled = false;
             stop = false;
+            parent.TouchingPlayer = stop;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

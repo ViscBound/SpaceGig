@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttackHitbox
   damage: 7
-  attackVisual: {fileID: 0}
+  attackVisual: {fileID: 2052961620652052861}
 --- !u!1 &7787663921495028197
 GameObject:
   m_ObjectHideFlags: 0

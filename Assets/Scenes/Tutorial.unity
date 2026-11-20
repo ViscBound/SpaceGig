@@ -293,15 +293,15 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 0182f7eab499a2f4cae506e8154feada, type: 3}
     - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 3085707404162738446, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43250,7 +43250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9024136227258639907, guid: 3f95823c678dc0041942ee953f8c12e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.2099996
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -43343,6 +43343,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7834501826800360378, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
+      propertyPath: attackVisual
+      value: 
+      objectReference: {fileID: 1515304009}
     - target: {fileID: 8404263327459976408, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
       propertyPath: pointA
       value: 
@@ -43656,7 +43660,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 8.4375
+  orthographic size: 9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -84251,6 +84255,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WFWall
   vineWall: {fileID: 1482445340}
+--- !u!212 &1515304009 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2052961620652052861, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
+  m_PrefabInstance: {fileID: 380095034}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1549882163
 GameObject:
   m_ObjectHideFlags: 0
