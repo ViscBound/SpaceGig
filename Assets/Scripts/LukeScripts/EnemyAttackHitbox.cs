@@ -4,7 +4,9 @@ public class EnemyAttackHitbox : MonoBehaviour
 {
     [Header("Attack Settings")]
     public int damage = 15;
-
+    public SpriteRenderer attackVisual;
+    private EnemyPatrol parent;
+    private bool stop;
     private bool flippedSpriteFacesRight = true;
 
     private Collider2D hitboxCollider;
@@ -21,6 +23,10 @@ public class EnemyAttackHitbox : MonoBehaviour
         originalOffset = hitboxCollider.offset;
 
         hitboxCollider.enabled = false;
+
+        // Hide visual
+        if (attackVisual != null)
+            attackVisual.enabled = false;
     }
 
     void LateUpdate()
@@ -28,28 +34,60 @@ public class EnemyAttackHitbox : MonoBehaviour
         if (enemySprite == null)
             return;
 
-        // Determine enemy facing direction
         bool facingRight =
             enemySprite.flipX == flippedSpriteFacesRight;
 
-        // Flip collider offset around its centre
         float direction = facingRight ? 1f : -1f;
 
         hitboxCollider.offset = new Vector2(
             Mathf.Abs(originalOffset.x) * direction,
             originalOffset.y
         );
+
+        // Align with collider
+        if (attackVisual != null)
+        {
+            attackVisual.transform.localPosition =
+                hitboxCollider.offset;
+
+            attackVisual.transform.localScale =
+                hitboxCollider.bounds.size;
+        }
     }
 
+    // White square appears
+    public void ShowWarning()
+    {
+        if (attackVisual != null)
+        {
+            attackVisual.color = Color.white;
+            attackVisual.enabled = true;
+
+            parent = gameObject.transform.parent.gameObject.GetComponent<EnemyPatrol>();
+            parent.TouchingPlayer = stop;
+            stop = true;
+        }
+    }
+
+    // Square turns red
     public void EnableHitbox()
     {
         hasHitPlayer = false;
+
+        if (attackVisual != null)
+            attackVisual.color = Color.red;
+
         hitboxCollider.enabled = true;
     }
 
+    // Attack disappears
     public void DisableHitbox()
     {
         hitboxCollider.enabled = false;
+
+        if (attackVisual != null)
+            attackVisual.enabled = false;
+            stop = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
