@@ -44103,6 +44103,14 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 294896589}
+    - target: {fileID: 8404263327459976408, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
+      propertyPath: attackHitbox
+      value: 
+      objectReference: {fileID: 1117298846}
+    - target: {fileID: 8404263327459976408, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
+      propertyPath: hitboxScript
+      value: 
+      objectReference: {fileID: 1117298845}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -44739,6 +44747,22 @@ Transform:
   - {fileID: 1482445337}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &879861252 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7834501826800360378, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
+  m_PrefabInstance: {fileID: 1136711414}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c918d41add4784b95520371fcabb95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttackHitbox
+--- !u!61 &879861253 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4955383664995463191, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
+  m_PrefabInstance: {fileID: 1136711414}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &884273080
 GameObject:
   m_ObjectHideFlags: 0
@@ -45030,6 +45054,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfa6366281d99cd41afd9865b1c0efb5, type: 3}
+--- !u!114 &1117298845 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7834501826800360378, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
+  m_PrefabInstance: {fileID: 380095034}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c918d41add4784b95520371fcabb95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttackHitbox
+--- !u!61 &1117298846 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4955383664995463191, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
+  m_PrefabInstance: {fileID: 380095034}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1136711414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45106,6 +45146,14 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 1893624144}
+    - target: {fileID: 8404263327459976408, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
+      propertyPath: attackHitbox
+      value: 
+      objectReference: {fileID: 879861253}
+    - target: {fileID: 8404263327459976408, guid: 90820adfdf703d946b3155875ab999b1, type: 3}
+      propertyPath: hitboxScript
+      value: 
+      objectReference: {fileID: 879861252}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
