@@ -103,10 +103,13 @@ namespace PlatformerController2D.Runtime.Scripts.Systems
             var bounds = FeetCollider.bounds;
             Vector2 boxCastOrigin = new Vector2(bounds.center.x, bounds.min.y);
             Vector2 boxCastSize = new Vector2(bounds.size.x, stats.GroundDetectionRayLenght);
+            //this is basically where my new stuff starts, i do basically copy of check for ground layer with plaform layer
             boxcheck=Physics2D.BoxCast(boxCastOrigin, boxCastSize, 0f, Vector2.down, stats.GroundDetectionRayLenght, stats.OneWayPlatforms);
             IsGrounded = Physics2D.BoxCast(boxCastOrigin, boxCastSize, 0f, Vector2.down, stats.GroundDetectionRayLenght, stats.GroundLayer).collider != null;
             if (boxcheck.collider != null)
             {
+                //here i check the y value found to see if its a fraction as due to tileset top of tile should have minimal fraction so if over that it assumes 
+                //you are inside the tile
                 var fraction = new float();
                 fraction = Mathf.Abs(Mathf.Round(boxcheck.point.y) - boxcheck.point.y);
                 if (fraction<0.009f)
@@ -119,7 +122,7 @@ namespace PlatformerController2D.Runtime.Scripts.Systems
                     Debug.Log("in platform?  "+fraction);
                 }
                 
-
+                
                 
             }
 
