@@ -11,6 +11,7 @@ namespace PlatformerController2D.Runtime.Scripts.Systems
         [SerializeField] private Collider2D BodyCollider;
         public Collider2D Feet => FeetCollider;
         public Collider2D Body => BodyCollider;
+        public RaycastHit2D boxcheck;
 
         public bool IsGrounded { get; private set; }
         public bool BumpedHead { get; private set; }
@@ -102,8 +103,27 @@ namespace PlatformerController2D.Runtime.Scripts.Systems
             var bounds = FeetCollider.bounds;
             Vector2 boxCastOrigin = new Vector2(bounds.center.x, bounds.min.y);
             Vector2 boxCastSize = new Vector2(bounds.size.x, stats.GroundDetectionRayLenght);
-
+            boxcheck=Physics2D.BoxCast(boxCastOrigin, boxCastSize, 0f, Vector2.down, stats.GroundDetectionRayLenght, stats.OneWayPlatforms);
             IsGrounded = Physics2D.BoxCast(boxCastOrigin, boxCastSize, 0f, Vector2.down, stats.GroundDetectionRayLenght, stats.GroundLayer).collider != null;
+            if (boxcheck.collider != null)
+            {
+                var fraction = new float();
+                fraction = Mathf.Abs(Mathf.Round(boxcheck.point.y) - boxcheck.point.y);
+                if (fraction<0.009f)
+                {
+                    Debug.Log("on Platform?  "+fraction);
+                    IsGrounded = true;
+                }
+                else
+                {
+                    Debug.Log("in platform?  "+fraction);
+                }
+                
+
+                
+            }
+
+            
         }
 
         private void CheckBumpedHead()
