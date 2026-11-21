@@ -151,7 +151,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7298092559685803634}
   - {fileID: 5022172761824226821}
@@ -221,6 +221,7 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 207c2525aeb2b60418fc1d31c9b5b08b, type: 2}
   FeetCollider: {fileID: 8394481082676599899}
   BodyCollider: {fileID: 5284851398511851565}
+  WallJumpUnlocked: 0
 --- !u!114 &2142035926128855977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,14 +268,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1301960139076022574}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ace1bea54489e834095188822d0acdb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AxeAttack
   axeSprite: {fileID: 3002471408084985954}
   axeCollider: {fileID: 4569530830169947240}
-  attackDuration: 0.4
+  attackDuration: 0.2
   attackDamage: 20
   attackAction: {fileID: 385797239366054640, guid: 0c01ef61175cf41e5830275658fc9428, type: 3}
 --- !u!114 &6997760616827296099
@@ -292,11 +293,11 @@ MonoBehaviour:
   oxygenSlider: {fileID: 0}
   player: {fileID: 8412784963211783688}
   maxOxygen: 100
-  walkingDrain: 2
-  runningDrain: 6
-  crouchingDrain: 1
-  jumpingDrain: 4
-  dashingDrain: 10
+  walkingDrain: 3
+  runningDrain: 3
+  jumpingDrain: 1
+  dashingDrain: 6
+  currentOxygen: 0
 --- !u!96 &7316487063455168867
 TrailRenderer:
   serializedVersion: 4
@@ -837,13 +838,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7954965607748700775}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.19, y: 0.38, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
-  m_ConstrainProportionsScale: 1
+  m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: -0, w: 0}
+  m_LocalPosition: {x: 1.85, y: 0.66, z: 0}
+  m_LocalScale: {x: 0.7091565, y: 1.6215469, z: 1.38372}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3085707404162738446}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: -90}
 --- !u!212 &3002471408084985954
 SpriteRenderer:
   serializedVersion: 3
@@ -893,7 +894,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -6212262919610547693, guid: ff968e4302988be48b402f6552e75140, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0182f7eab499a2f4cae506e8154feada, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -938,15 +939,15 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.18285307, y: 0.24013734}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7291667, y: 0.33333334}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 0.7291667, y: 0.33333334}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.7291667, y: 0.33333334}
+  m_Size: {x: 1.5977197, y: 1.0713172}
   m_EdgeRadius: 0

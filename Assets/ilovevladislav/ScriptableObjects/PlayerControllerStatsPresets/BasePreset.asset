@@ -23,8 +23,8 @@ MonoBehaviour:
   RunSpeed: 12
   RunAcceleration: 150
   RunDeceleration: 150
-  MaxJumpHeight: 4.5
-  MinJumpHeight: 1
+  MaxJumpHeight: 5
+  MinJumpHeight: 0.7
   TimeTillJumpApex: 0.3
   JumpHeightCompensationFactor: 1.06
   JumpGravityMultiplayer: 1
@@ -45,7 +45,6 @@ MonoBehaviour:
   StartVelocityWallSlide: 2.5
   WallSlideSpeedMax: 3.5
   WallSlideDeceleration: 5
-  CanWallJump: 0
   WallJumpClimb: {x: 20, y: 25}
   WallJumpOff: {x: 5, y: 8}
   WallLeap: {x: 40, y: 15}
