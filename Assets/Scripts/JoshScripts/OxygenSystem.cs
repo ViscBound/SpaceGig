@@ -8,6 +8,7 @@ public class OxygenSystem : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Slider oxygenSlider;
+    [SerializeField] private Image oxygenFill;
     [SerializeField] private PlayerController player;
 
     [Header("Oxygen Settings")]
@@ -19,6 +20,15 @@ public class OxygenSystem : MonoBehaviour
 
     public float currentOxygen;
     private IState previousState;
+    private float oxygenColour;
+
+    [Header("Oxygen Colours")]
+    [SerializeField] private float yellowOxygen = 0.5f;
+    [SerializeField] private float redOxygen = 0.25f;
+
+    [SerializeField] private Color greenColour;
+    [SerializeField] private Color yellowColor;
+    [SerializeField] private Color redColor;
 
     private void Start()
     {
@@ -64,11 +74,23 @@ public class OxygenSystem : MonoBehaviour
         Debug.Log("Player took " + damage + " damage! Oxygen: " + currentOxygen);
     }
 
+    public void UpdateOxygenColour()
+    {
+        oxygenColour = currentOxygen / maxOxygen;
+        if (oxygenColour >= yellowOxygen)
+            oxygenFill.color = greenColour;
+        else if (oxygenColour <= yellowOxygen && oxygenColour >= redOxygen)
+            oxygenFill.color = yellowColor;
+        else if (oxygenColour <= redOxygen)
+            oxygenFill.color = redColor;
+    }
+
     private void UpdateOxygenUI()
     {
         if (oxygenSlider != null)
         {
             oxygenSlider.value = currentOxygen;
+            UpdateOxygenColour();
         }
     }
 }
