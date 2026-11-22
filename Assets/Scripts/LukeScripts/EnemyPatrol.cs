@@ -7,6 +7,11 @@ public class EnemyPatrol : MonoBehaviour
     public GameObject pointB;
     public float speed = 2f;
 
+    // Furthest the enemy can chase
+    [Header("Chase Boundaries")]
+    public GameObject pointC; 
+    public GameObject pointD;
+
     [Header("Attack Settings")]
     public float attackRange = 1.5f;
     public float attackCooldown = 1.5f;
@@ -55,8 +60,20 @@ public class EnemyPatrol : MonoBehaviour
                 player.position
             );
 
-            // Player is close enough to attack
-            if (distance <= attackRange)
+            float enemyX = transform.position.x;
+
+            // Check if enemy has reached its chase boundaries
+            if (enemyX <= pointC.transform.position.x &&
+                player.position.x < enemyX)
+            {
+                StopChasing();
+            }
+            else if (enemyX >= pointD.transform.position.x &&
+                    player.position.x > enemyX)
+            {
+                StopChasing();
+            }
+            else if (distance <= attackRange)
             {
                 rb.linearVelocity = Vector2.zero;
 
@@ -71,10 +88,10 @@ public class EnemyPatrol : MonoBehaviour
             }
             else if (!isAttacking)
             {
-                // Chase player
                 float direction = Mathf.Sign(
                     player.position.x - transform.position.x
                 );
+
                 if (!TouchingPlayer)
                 {
                     rb.linearVelocity = new Vector2(direction * speed, 0f);
@@ -218,6 +235,14 @@ public class EnemyPatrol : MonoBehaviour
         }
     }
 
+    void StopChasing()
+    {
+        chasingPlayer = false;
+        player = null;
+
+        rb.linearVelocity = Vector2.zero;
+    }
+
     private void OnDrawGizmos()
     {
         if (pointA != null)
@@ -225,6 +250,12 @@ public class EnemyPatrol : MonoBehaviour
 
         if (pointB != null)
             Gizmos.DrawWireSphere(pointB.transform.position, 0.5f);
+        
+        if (pointC != null)
+            Gizmos.DrawWireSphere(pointC.transform.position, 0.5f);
+
+        if (pointD != null)
+            Gizmos.DrawWireSphere(pointD.transform.position, 0.5f);
     }
     //hi i darragh added this to freeze enemy when touching player 
     //just added a bool to any instances of updating the velocity to disable them if bool is true

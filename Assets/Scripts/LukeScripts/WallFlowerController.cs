@@ -23,9 +23,13 @@ public class WallFlowerController : MonoBehaviour
     public FiringDirection firingDirection = FiringDirection.Left;
 
     private float fireTimer;
+    private bool isActive = false;
 
     void Update()
     {
+        if (!isActive)
+            return;
+        
         if (playerHead == null || pointA == null || pointB == null)
             return;
 
@@ -78,6 +82,16 @@ public class WallFlowerController : MonoBehaviour
             : Vector2.right;
 
         projectileScript.Launch(direction);
+    }
+
+    public void SetActive(bool active)
+    {
+        isActive = active;
+
+        if (!isActive)
+        {
+            fireTimer = 0f;
+        }
     }
 
     private void OnDrawGizmos()
