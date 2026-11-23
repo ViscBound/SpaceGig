@@ -45,13 +45,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OxygenSystem
   oxygenSlider: {fileID: 0}
+  oxygenFill: {fileID: 0}
   player: {fileID: 6175421958635524313}
   maxOxygen: 100
   walkingDrain: 2
   runningDrain: 4
-  crouchingDrain: 4
   jumpingDrain: 3
   dashingDrain: 10
+  currentOxygen: 0
+  yellowOxygen: 0.5
+  redOxygen: 0.25
+  greenColour: {r: 0, g: 0, b: 0, a: 0}
+  yellowColor: {r: 0, g: 0, b: 0, a: 0}
+  redColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &811675193540155313
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,7 +597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7442307416919817802
 Transform:
   m_ObjectHideFlags: 0
@@ -733,6 +739,7 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 207c2525aeb2b60418fc1d31c9b5b08b, type: 2}
   FeetCollider: {fileID: 9029679549591078846}
   BodyCollider: {fileID: 9018678476671076796}
+  WallJumpUnlocked: 0
 --- !u!114 &1305317956909250950
 MonoBehaviour:
   m_ObjectHideFlags: 0
