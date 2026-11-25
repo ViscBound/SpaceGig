@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using System.Collections.Generic;
 
 public class WFWall : MonoBehaviour
 {
@@ -9,7 +10,12 @@ public class WFWall : MonoBehaviour
     {
         if (vineWall != null)
         {
-            vineWall.ClearAllTiles();
+            vineWall.gameObject.SetActive(false);
         }
+    }
+
+    public void RestoreWall()
+    {
+        vineWall.gameObject.SetActive(true);
     }
 }
