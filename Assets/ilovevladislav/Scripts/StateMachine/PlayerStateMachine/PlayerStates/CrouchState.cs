@@ -20,8 +20,15 @@ namespace PlatformerController2D.Runtime.Scripts.StateMachine.PlayerStateMachine
 		public override void OnEnter()
 		{		
 			Debug.Log("CrouchState");
-		
-			animationController.PlayAnimation("CrouchWalk");
+
+			if (StaticVars.instance.AxeFlag)
+			{
+				animationController.PlayAnimation("CrouchWalk");
+			}
+			else
+			{
+                animationController.PlayAnimation("CrouchWalk 1");
+            }
 		
 			_crouchModule.SetCrouchState(true);
 		}

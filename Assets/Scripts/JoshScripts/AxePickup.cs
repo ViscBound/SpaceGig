@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class AxePickup : MonoBehaviour
 {
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -13,6 +14,7 @@ public class AxePickup : MonoBehaviour
             axe.enabled = true;
             Debug.Log("Axe collected");
             Destroy(gameObject);
+            StaticVars.instance.AxeFlag = true;
            }
         }
     }

@@ -1,6 +1,8 @@
+using PlatformerController2D.Runtime.Scripts.Systems;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Collections;
+
 
 public class AxeAttack : MonoBehaviour
 {
@@ -14,11 +16,16 @@ public class AxeAttack : MonoBehaviour
 
     [Header("Input")]
     [SerializeField] private InputActionReference attackAction;
+    [SerializeField] private Animator animator;
+    
 
-    private bool isAttacking;
+
+
+    public bool isAttacking;
 
     private void Awake()
     {
+
         axeSprite.enabled = false;
         axeCollider.enabled = false;
     }
@@ -47,16 +54,18 @@ public class AxeAttack : MonoBehaviour
 
     private IEnumerator Attack()
     {
+        animator.Play("Attack");
         isAttacking = true;
+        Debug.Log("attack start");
 
-        axeSprite.enabled = true;
+        //axeSprite.enabled = true;
         axeCollider.enabled = true;
 
         yield return new WaitForSeconds(attackDuration);
-
+        
         axeCollider.enabled = false;
-        axeSprite.enabled = false;
-
+        //axeSprite.enabled = false;
+        Debug.Log("attack end");
         isAttacking = false;
     }
 

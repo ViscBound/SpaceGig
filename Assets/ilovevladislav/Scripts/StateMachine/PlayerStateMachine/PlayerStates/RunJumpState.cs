@@ -24,7 +24,14 @@ namespace PlatformerController2D.Runtime.Scripts.StateMachine.PlayerStateMachine
         {
             Debug.Log("RunJumpState");
 
-            animationController.PlayAnimation("Jump");
+            if (StaticVars.instance.AxeFlag)
+            {
+                animationController.PlayAnimation("Jump");
+            }
+            else
+            {
+                animationController.PlayAnimation("Jump 1");
+            }
             _jumpModule.OnMultiJump += () => animationController.PlayAnimation("MultiJump");
         }
     

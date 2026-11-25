@@ -22,8 +22,17 @@ namespace PlatformerController2D.Runtime.Scripts.StateMachine.PlayerStateMachine
 		public override void OnEnter()
 		{
 			Debug.Log("JumpEnter");
+            if (StaticVars.instance.AxeFlag)
+            {
+                animationController.PlayAnimation("Jump");
+            }
+            else
+            {
+                animationController.PlayAnimation("Jump 1");
+            }
 
-			animationController.PlayAnimation("Jump");
+
+
 		
 			_jumpModule.OnMultiJump += () => animationController.PlayAnimation("MultiJump");
 		}
