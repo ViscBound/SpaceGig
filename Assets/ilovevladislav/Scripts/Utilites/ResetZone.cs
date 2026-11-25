@@ -64,6 +64,12 @@ namespace PlatformerController2D.Runtime.Scripts.Utilites
             {
                 oxygen.currentOxygen = 100f;
             }
+
+            EnemyHealth[] enemies = FindObjectsByType<EnemyHealth>(FindObjectsInactive.Include);
+            foreach (EnemyHealth enemy in enemies)
+            {
+                enemy.ResetEnemy();
+            }
         }
     }
 }

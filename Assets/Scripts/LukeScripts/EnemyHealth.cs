@@ -10,7 +10,9 @@ public class EnemyHealth : MonoBehaviour
 
     [Header("Enemy")]
     [SerializeField] private SpriteRenderer enemySprite;
+    [SerializeField] private WFWall wallToRestore;
     private Color originalColour;
+    private Vector3 startPosition;
 
     [Header("Events")]
     public UnityEvent onDeath;
@@ -19,6 +21,19 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         originalColour = enemySprite.color;
+        startPosition = transform.position;
+    }
+
+    public void ResetEnemy()
+    {
+        transform.position = startPosition;
+        currentHealth = maxHealth;
+        enemySprite.color = originalColour;
+        
+        if (wallToRestore != null)
+            wallToRestore.RestoreWall();
+
+        gameObject.SetActive(true);
     }
 
     public void TakeDamage(int damage)
@@ -49,6 +64,6 @@ public class EnemyHealth : MonoBehaviour
 
         onDeath?.Invoke();
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
