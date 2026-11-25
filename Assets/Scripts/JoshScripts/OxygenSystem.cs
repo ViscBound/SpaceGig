@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using PlatformerController2D.Runtime.Scripts.Player;
 using PlatformerController2D.Runtime.Scripts.StateMachine;
 using PlatformerController2D.Runtime.Scripts.StateMachine.PlayerStateMachine.PlayerState;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class OxygenSystem : MonoBehaviour
 {
@@ -30,9 +32,26 @@ public class OxygenSystem : MonoBehaviour
     [SerializeField] private Color yellowColor;
     [SerializeField] private Color redColor;
 
+    [Header("Vignette Settings")]
+    [SerializeField] private Volume globalVolume;
+    [SerializeField, Range(0f, 1f)] private float maxVignetteIntensity = 0.45f;
+    [SerializeField, Range(0f, 0.5f)] private float vignetteFadeOutOxygen = 0.05f;
+
+    private Vignette vignette;
+
     private void Start()
     {
         currentOxygen = maxOxygen;
+
+        if (globalVolume != null && globalVolume.profile.TryGet(out vignette))
+        {
+            vignette.intensity.overrideState = true;
+            vignette.intensity.value = 0f;
+        }
+        else
+        {
+            Debug.LogWarning("GV or Vignette is missing!");
+        }
 
         UpdateOxygenUI();
     }
@@ -91,6 +110,52 @@ public class OxygenSystem : MonoBehaviour
         {
             oxygenSlider.value = currentOxygen;
             UpdateOxygenColour();
+        }
+
+        UpdateOxygenVignette();
+    }
+
+    private void UpdateOxygenVignette()
+    {
+        if (vignette == null)
+            return;
+
+        float oxygenPercentage = currentOxygen / maxOxygen;
+
+        // No vignette above 50% or below 0
+        if (oxygenPercentage >= 0.5f || oxygenPercentage <= 0f)
+        {
+            vignette.intensity.value = 0f;
+            return;
+        }
+
+        // Increase vignette from 50%
+        if (oxygenPercentage >= vignetteFadeOutOxygen)
+        {
+            float progress = Mathf.InverseLerp(
+                0.5f,
+                vignetteFadeOutOxygen,
+                oxygenPercentage
+            );
+
+            // Exponential-style curve (I think this is better than Linear)
+            progress = Mathf.Pow(progress, 0.5f);
+
+            vignette.intensity.value = Mathf.Lerp(
+                0f,
+                maxVignetteIntensity,
+                progress
+            );
+        }
+        else
+        {
+            float progress = oxygenPercentage / vignetteFadeOutOxygen;
+
+            vignette.intensity.value = Mathf.Lerp(
+                0f,
+                maxVignetteIntensity,
+                progress
+            );
         }
     }
 }

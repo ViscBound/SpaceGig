@@ -341,9 +341,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1963364163}
     - target: {fileID: 6997760616827296099, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
+      propertyPath: globalVolume
+      value: 
+      objectReference: {fileID: 76336280}
+    - target: {fileID: 6997760616827296099, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
       propertyPath: oxygenSlider
       value: 
       objectReference: {fileID: 1549882164}
+    - target: {fileID: 6997760616827296099, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
+      propertyPath: maxVignetteIntensity
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6997760616827296099, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
+      propertyPath: vignetteFadeOutOxygen
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8266798550898750820, guid: 23d381eefe114ab4a95bd6201362d3e8, type: 3}
