@@ -11,6 +11,7 @@ namespace PlatformerController2D.Runtime.Scripts.Utilites
         public Slider oxygenSlider;
         public OxygenSystem oxygen;
 
+        public Animator Screenwipe;
         private bool hasReset = false;
 
         private void Update()
@@ -52,8 +53,14 @@ namespace PlatformerController2D.Runtime.Scripts.Utilites
             {
                 player.transform.position = Vector3.zero;
             }
-        
+
+            if(Screenwipe != null)
+            {
+
+                Screenwipe.Play("screenwipe", -1, 0f);
+            }
             Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+
             if (playerRb != null)
             {
                 playerRb.linearVelocity = Vector2.zero;

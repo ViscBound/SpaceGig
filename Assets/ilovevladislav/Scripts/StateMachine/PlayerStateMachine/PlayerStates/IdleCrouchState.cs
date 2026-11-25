@@ -16,8 +16,16 @@ namespace PlatformerController2D.Runtime.Scripts.StateMachine.PlayerStateMachine
         public override void OnEnter()
         {		
             Debug.Log("IdleCrouchState");
-        
-            animationController.PlayAnimation("CrouchIdle");
+            if (StaticVars.instance.AxeFlag)
+            {
+                animationController.PlayAnimation("CrouchIdle");
+            }
+            else
+            {
+                 animationController.PlayAnimation("CrouchIdle 1");
+            }
+
+           
         
             _crouchModule.SetCrouchState(true);
 

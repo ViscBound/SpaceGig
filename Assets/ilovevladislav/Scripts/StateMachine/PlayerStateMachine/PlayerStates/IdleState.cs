@@ -10,8 +10,18 @@ namespace PlatformerController2D.Runtime.Scripts.StateMachine.PlayerStateMachine
 		public override void OnEnter()
 		{
 			Debug.Log("IdleState");
+            Debug.Log("idle state axe check outer" + StaticVars.instance.AxeFlag);
+            if (StaticVars.instance.AxeFlag)
+            {
+                animationController.PlayAnimation("Idle");
+				Debug.Log("idle state axe check" + StaticVars.instance.AxeFlag);
+            }
+            else
+            {
+                animationController.PlayAnimation("Idle 1");
+            }
 
-			animationController.PlayAnimation("Idle");
+            
 		}
 
 		public override void Update()

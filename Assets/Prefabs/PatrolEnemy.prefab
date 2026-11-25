@@ -181,7 +181,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2547983712347128737, guid: 00a259e7ecfe88f4b8b744a0e699e3dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -342,6 +342,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   enemySprite: {fileID: 2709312273273797991}
+  wallToRestore: {fileID: 0}
   onDeath:
     m_PersistentCalls:
       m_Calls: []

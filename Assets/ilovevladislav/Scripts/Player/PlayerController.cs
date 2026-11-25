@@ -53,6 +53,8 @@ namespace PlatformerController2D.Runtime.Scripts.Player
 
 		public PlayerControllerStats Stats => runtimeStats;
 
+		private bool wasAttacking;
+
 		private void Awake()
 		{
 			runtimeStats = Instantiate(playerControllerStats);
@@ -120,7 +122,17 @@ namespace PlatformerController2D.Runtime.Scripts.Player
 
 		private void FixedUpdate()
 		{
-			_stateMachine.FixedUpdate();
+			if (!gameObject.GetComponent<AxeAttack>().isAttacking)
+			{
+				_stateMachine.FixedUpdate();
+                if (wasAttacking != gameObject.GetComponent<AxeAttack>().isAttacking)
+                {
+                    _stateMachine.SetState(_stateMachine.CurrentState);
+
+                }
+            }
+			
+			//Debug.Log(gameObject.GetComponent<AxeAttack>().isAttacking);
 		
 			// Debug.Log(physicsHandler2D.GetVelocity().x);
 		}

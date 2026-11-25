@@ -20,8 +20,15 @@ namespace PlatformerController2D.Runtime.Scripts.StateMachine.PlayerStateMachine
         public override void OnEnter()
         {
             Debug.Log("RunFallState");
-        
-            animationController.PlayAnimation("Fall");
+
+            if (StaticVars.instance.AxeFlag)
+            {
+                animationController.PlayAnimation("Fall");
+            }
+            else
+            {
+                animationController.PlayAnimation("Fall 1");
+            }
         }
     
         public override void Update()
