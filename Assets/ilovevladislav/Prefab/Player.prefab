@@ -80,14 +80,14 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -4129041442308449352, guid: 54adccc6047075b40aa55755280fda71, type: 3}
+  m_Sprite: {fileID: 644490321798514309, guid: 3a973babb43bd6e4385940ccd4091655, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -346,6 +346,8 @@ MonoBehaviour:
   attackDuration: 0.2
   attackDamage: 20
   attackAction: {fileID: 385797239366054640, guid: 0c01ef61175cf41e5830275658fc9428, type: 3}
+  animator: {fileID: 0}
+  isAttacking: 0
 --- !u!114 &6997760616827296099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -929,7 +931,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7954965607748700775}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
