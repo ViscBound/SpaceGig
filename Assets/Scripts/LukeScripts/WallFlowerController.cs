@@ -22,27 +22,30 @@ public class WallFlowerController : MonoBehaviour
     public float fireInterval = 2f;
     public FiringDirection firingDirection = FiringDirection.Left;
 
+    [Header("Animation Settings")]
+    public Animator animator;
+
     private float fireTimer;
     private bool isActive = false;
+    private bool isShooting = false;
 
     void Update()
     {
-        if (!isActive)
+        if (!isActive || isShooting)
             return;
-        
+
         if (playerHead == null || pointA == null || pointB == null)
             return;
 
+        // Moves to player's head
         float targetHeight = playerHead.position.y;
 
-        // Move between Point A and Point B
         targetHeight = Mathf.Clamp(
             targetHeight,
             Mathf.Min(pointA.position.y, pointB.position.y),
             Mathf.Max(pointA.position.y, pointB.position.y)
         );
 
-        // Move to player's head
         Vector3 targetPosition = new Vector3(
             transform.position.x,
             targetHeight,
@@ -60,12 +63,21 @@ public class WallFlowerController : MonoBehaviour
 
         if (fireTimer >= fireInterval)
         {
-            FireProjectile();
             fireTimer = 0f;
+            StartShooting();
         }
     }
 
-    void FireProjectile()
+    void StartShooting()
+    {
+        isShooting = true;
+
+        if (animator != null)
+            animator.SetTrigger("Shoot");
+    }
+
+    // Animation Event to fire projectile on certain frame
+    public void FireProjectile()
     {
         GameObject projectile = Instantiate(
             projectilePrefab,
@@ -76,7 +88,6 @@ public class WallFlowerController : MonoBehaviour
         Projectile projectileScript =
             projectile.GetComponent<Projectile>();
 
-        // Choose direction to fire
         Vector2 direction = firingDirection == FiringDirection.Left
             ? Vector2.left
             : Vector2.right;
@@ -84,14 +95,18 @@ public class WallFlowerController : MonoBehaviour
         projectileScript.Launch(direction);
     }
 
+    // Animation Event to stop firing on certain frame
+    public void FinishShooting()
+    {
+        isShooting = false;
+    }
+
     public void SetActive(bool active)
     {
         isActive = active;
 
         if (!isActive)
-        {
             fireTimer = 0f;
-        }
     }
 
     private void OnDrawGizmos()
