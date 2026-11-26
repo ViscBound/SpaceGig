@@ -12,13 +12,15 @@ public class OxygenSystem : MonoBehaviour
     [SerializeField] private PlayerController player;
 
     [Header("Oxygen Settings")]
-    [SerializeField] private float maxOxygen = 100f;
-    [SerializeField] private float walkingDrain = 2f;
-    [SerializeField] private float runningDrain = 6f;
+    public int maxOxygen = 100;
+    [SerializeField] private int walkingDrain = 2;
+    [SerializeField] private int runningDrain = 6;
     [SerializeField] private int jumpingDrain = 4;
-    [SerializeField] private float dashingDrain = 10f;
+    [SerializeField] private int dashingDrain = 10;
 
-    public float currentOxygen;
+    [HideInInspector] public float currentOxygen;
+    [SerializeField] private int oxygenDisplay;
+    public bool canDrainOxygen;
     private IState previousState;
     private float oxygenColour;
 
@@ -39,7 +41,7 @@ public class OxygenSystem : MonoBehaviour
 
     private void Update()
     {
-        if (player == null || currentOxygen <= 0f)
+        if (player == null || currentOxygen <= 0f || !canDrainOxygen)
             return;
 
         float drainRate = 0f;
@@ -74,6 +76,13 @@ public class OxygenSystem : MonoBehaviour
         Debug.Log("Player took " + damage + " damage! Oxygen: " + currentOxygen);
     }
 
+    public void RefillOxygen(float amount)
+    {
+        currentOxygen += amount;
+        currentOxygen = Mathf.Clamp(currentOxygen, 0f, maxOxygen);
+        UpdateOxygenUI();
+    }
+
     public void UpdateOxygenColour()
     {
         oxygenColour = currentOxygen / maxOxygen;
@@ -90,6 +99,7 @@ public class OxygenSystem : MonoBehaviour
         if (oxygenSlider != null)
         {
             oxygenSlider.value = currentOxygen;
+            oxygenDisplay = Mathf.FloorToInt(currentOxygen);
             UpdateOxygenColour();
         }
     }
